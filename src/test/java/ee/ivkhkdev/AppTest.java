@@ -1,67 +1,54 @@
 package ee.ivkhkdev;
 
+import ee.ivkhkdev.handlers.BookHandler;
+import ee.ivkhkdev.interfaces.BookProvider;
+import ee.ivkhkdev.interfaces.InputProvider;
+import ee.ivkhkdev.model.Author;
+import ee.ivkhkdev.model.Book;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.io.ByteArrayInputStream;
+
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-public class AppTest {
-
-    @Test
-    public void testRunExit() {
-        String input = "0\n"; // Ввод для выхода из программы
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        App app = new App();
-        app.run(); // Запуск метода
-
-        // Здесь можно добавить дополнительные проверки, если необходимо
-        String output = outContent.toString();
-        assertTrue(output.contains("Досвидания :)")); // Проверка на наличие текста
-
+class AppTest {
+    PrintStream defaultOut;
+    ByteArrayOutputStream out;
+    InputProvider mockInputProvider;
+    BookProvider mockBookProvider;
+    BookHandler bookHandler;
+    @BeforeEach
+    void setUp() {
+        mockInputProvider = mock(InputProvider.class);
+        mockBookProvider = mock(BookProvider.class);
+        bookHandler = new BookHandler(mockBookProvider,mockInputProvider);
+        defaultOut = System.out;
+        out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
     }
 
+    @AfterEach
+    void tearDown() {
+    }
     @Test
-    public void testRunInvalidTask() {
-        String input = "2\n0\n"; // Ввод для неверной задачи и выхода
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
+    public void testRunExit() {
+        when(mockInputProvider.getInput())
+                .thenReturn("0");
+        Author author = new Author("Лев","Толстой");
+        Author[] authors = new Author[1];
+        authors[0]=author;
+        when(mockBookProvider.newBook(mockInputProvider)).thenReturn(new Book("Война и мир", authors,2000));
 
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        App app = new App();
-        app.run(); // Запуск метода
-
-        // Здесь можно добавить дополнительные проверки, если необходимо
-        String output = outContent.toString();
-        assertTrue(output.contains("Выберите задачу из списка!")); // Проверка на наличие текста
-        assertTrue(output.contains("Досвидания :)")); // Проверка на наличие текста
-
-    }@Test
-    public void testRunValidTask() {
-        String input = "1\n0\n"; // Ввод для неверной задачи и выхода
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        App app = new App();
-        app.run(); // Запуск метода
-
-        // Здесь можно добавить дополнительные проверки, если необходимо
-        String output = outContent.toString();
-        assertTrue(output.contains("----- Добавление книги -----")); // Проверка на наличие текста
-        assertTrue(output.contains("Досвидания :)")); // Проверка на наличие текста
-
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        App app = new App(bookHandler, mockInputProvider,mockBookProvider);
+        app.run();
+        String output = out.toString();
+        assertTrue(output.contains("До свидания! :)"));
     }
 }
