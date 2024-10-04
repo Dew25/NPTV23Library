@@ -35,7 +35,7 @@ public class App {
                     break;
                 case 1:
                     System.out.println("----- Добавление книги -----");
-                    bookHandler.addBbook();
+                    bookHandler.addBbook(inputProvider);
                     break;
                 default:
                     System.out.println("Выберите задачу из списка!");

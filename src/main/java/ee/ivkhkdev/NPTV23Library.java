@@ -13,7 +13,7 @@ public class NPTV23Library {
     public static void main(String[] args) {
         InputProvider inputProvider = new ConsoleInput();
         BookProvider bookProvider = new InputBook();
-        BookHandler bookHandler = new BookHandler(inputProvider,bookProvider);
+        BookHandler bookHandler = new BookHandler(bookProvider);
         App app = new App(bookHandler,inputProvider);
         app.run();
     }

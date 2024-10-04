@@ -32,19 +32,22 @@ class AppTest {
     }
     @Test
     void testAppRunExit() {
+        //Создаем заглушку
         InputProvider inputMock = Mockito.mock(InputProvider.class);
-        when(inputMock.getInput()).thenReturn("0");
+        when(inputMock.getInput()).thenReturn("0");// Задаем значение ввода
+        //Создаем заглушку
         BookProvider bookProviderMock = Mockito.mock(BookProvider.class);
+        //Создаем массив авторов и инициируем его автором
         Author[] authors = new Author[1];
         Author author = new Author("Lev","Tolstoy");
         authors[0] = author;
+        //Задаем значение, которое вставит bookProviderMock
         when(bookProviderMock.createBook(inputMock)).thenReturn(new Book("Voina i mir",authors,2000));
-        BookHandler bookHandler = new BookHandler(inputMock,bookProviderMock);
+        BookHandler bookHandler = new BookHandler(bookProviderMock);
         App app = new App(bookHandler,inputMock);
         app.run();
-//        String outContentString = outContent.toString();
 //        System.setOut(new PrintStream(outDefault));
-//        System.out.println(outContentString);
+//        System.out.println(outContent.toString());
         assertTrue(outContent.toString().contains("До свидания :)"));
     }
 }
