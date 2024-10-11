@@ -1,8 +1,9 @@
 package ee.ivkhkdev;
 
-import ee.ivkhkdev.handlers.BookHandler;
+import ee.ivkhkdev.handlers.BookService;
 import ee.ivkhkdev.interfaces.BookProvider;
 import ee.ivkhkdev.interfaces.InputProvider;
+import ee.ivkhkdev.interfaces.impl.AppBookHalper;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
 import org.junit.jupiter.api.AfterEach;
@@ -31,10 +32,10 @@ class AppTest {
         System.setOut(new PrintStream(outDefault));
     }
     @Test
-    void testAppRunExit() {
+    void testAppRun() {
         //Создаем заглушку
         InputProvider inputMock = Mockito.mock(InputProvider.class);
-        when(inputMock.getInput()).thenReturn("0");// Задаем значение ввода
+        when(inputMock.getInput()).thenReturn("1","2","0");// Задаем значение ввода
         //Создаем заглушку
         BookProvider bookProviderMock = Mockito.mock(BookProvider.class);
         //Создаем массив авторов и инициируем его автором
@@ -43,11 +44,16 @@ class AppTest {
         authors[0] = author;
         //Задаем значение, которое вставит bookProviderMock
         when(bookProviderMock.createBook(inputMock)).thenReturn(new Book("Voina i mir",authors,2000));
-        BookHandler bookHandler = new BookHandler(bookProviderMock);
-        App app = new App(bookHandler,inputMock);
+        when(bookProviderMock.getList()).thenReturn("1. Voina i mir. Lev, Tolstoy. 2000");
+
+        BookService bookService = new BookService(bookProviderMock);
+        App app = new App(inputMock,bookService);
         app.run();
-//        System.setOut(new PrintStream(outDefault));
-//        System.out.println(outContent.toString());
+        System.setOut(new PrintStream(outDefault));
+        System.out.println(outContent.toString());
+        assertTrue(outContent.toString().contains("Книга добавлена"));
+        assertTrue(outContent.toString().contains("Voina i mir"));
         assertTrue(outContent.toString().contains("До свидания :)"));
     }
+
 }

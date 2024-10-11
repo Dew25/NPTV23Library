@@ -1,21 +1,18 @@
 package ee.ivkhkdev;
 
-import ee.ivkhkdev.handlers.BookHandler;
+import ee.ivkhkdev.handlers.BookService;
 import ee.ivkhkdev.interfaces.InputProvider;
 import ee.ivkhkdev.model.Book;
-
-
-import java.util.Scanner;
 
 public class App {
 
     public static Book[] books = new Book[100];
 
-    private final BookHandler bookHandler;
+    private final BookService bookService;
     private final InputProvider inputProvider;
 
-    public App(BookHandler bookHandler, InputProvider inputProvider) {
-        this.bookHandler = bookHandler;
+    public App(InputProvider inputProvider,BookService bookService) {
+        this.bookService = bookService;
         this.inputProvider = inputProvider;
     }
 
@@ -27,6 +24,7 @@ public class App {
             System.out.println("Список задач: ");
             System.out.println("0. Выйти из программы");
             System.out.println("1. Добавить книгу");
+            System.out.println("2. Список книг");
             System.out.print("Введите номер задачи: ");
             int task = Integer.parseInt(inputProvider.getInput());
             switch (task) {
@@ -35,7 +33,11 @@ public class App {
                     break;
                 case 1:
                     System.out.println("----- Добавление книги -----");
-                    bookHandler.addBbook(inputProvider);
+                    bookService.addBbook(inputProvider);
+                    break;
+                case 2:
+                    System.out.println("----- Список книг -----");
+                    System.out.println(bookService.printListBooks());
                     break;
                 default:
                     System.out.println("Выберите задачу из списка!");
