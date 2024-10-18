@@ -13,18 +13,26 @@ public class BookService {
        this.bookProvider = bookProvider;
     }
 
-    public void add(Input input) {
-        Book book = bookProvider.create(input);
-        for (int i = 0; i < App.books.length; i++) {
-            if( App.books[i] == null) {
-                App.books[i] = book;
-                System.out.println("Книга добавлена");
-                break;
+    public boolean add(Input input, Book[] books) {
+        try {
+            Book book = bookProvider.create(input);
+            if(book == null) return false;
+            for (int i = 0; i < books.length; i++) {
+                if( books[i] == null) {
+                    books[i] = book;
+                    System.out.println("Книга добавлена");
+                    break;
+                }
+
             }
+            return true;
+        }catch (Exception e){
+            return false;
         }
+
     }
 
-    public String  printListBooks() {
-        return bookProvider.getList();
+    public String printList(Book[] books) {
+        return bookProvider.getList(books);
     }
 }

@@ -36,18 +36,18 @@ class AppTest {
     void testAppRun() {
         //Создаем заглушку
         Input inputMock = Mockito.mock(Input.class);
-        when(inputMock.getString()).thenReturn("1","2","0");// Задаем значение ввода
+        when(inputMock.getString()).thenReturn("0");// Задаем значение ввода
         //Создаем заглушку
         BookProvider bookProviderMock = Mockito.mock(BookProvider.class);
         UserProvider userProviderMock = Mockito.mock(UserProvider.class);
-        //Создаем массив авторов и инициируем его автором
-        Author[] authors = new Author[1];
-        Author author = new Author("Lev","Tolstoy");
-        authors[0] = author;
-        //Задаем значение, которое вставит bookProviderMock
-        when(bookProviderMock.create(inputMock)).thenReturn(new Book("Voina i mir",authors,2000));
-        when(bookProviderMock.getList()).thenReturn("1. Voina i mir. Lev, Tolstoy. 2000");
-
+//        //Создаем массив авторов и инициируем его автором
+//        Author[] authors = new Author[1];
+//        Author author = new Author("Lev","Tolstoy");
+//        authors[0] = author;
+//        //Задаем значение, которое вставит bookProviderMock
+//        when(bookProviderMock.create(inputMock)).thenReturn(new Book("Voina i mir",authors,2000));
+//        when(bookProviderMock.getList()).thenReturn("1. Voina i mir. Lev, Tolstoy. 2000");
+//
         BookService bookServiceMock = new BookService(bookProviderMock);
         UserService userServiceMock = new UserService(userProviderMock);
         App app = new App(inputMock,bookServiceMock,userServiceMock);

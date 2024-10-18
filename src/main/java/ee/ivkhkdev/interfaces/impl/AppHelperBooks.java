@@ -30,10 +30,10 @@ public class AppHelperBooks implements BookProvider {
     }
 
     @Override
-    public String getList() {
+    public String getList(Book[] books) {
         StringBuilder sbBooks = new StringBuilder();
-        for (int i = 0; i < App.books.length; i++) {
-            Book book = App.books[i];
+        for (int i = 0; i < books.length; i++) {
+            Book book = books[i];
             if(book == null) {continue;}
             StringBuilder sbAuthorsBook = new StringBuilder();
             for (Author author : book.getAuthors()) {

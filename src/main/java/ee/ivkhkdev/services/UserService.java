@@ -12,13 +12,13 @@ public class UserService {
         this.userProvider = userProvider;
     }
 
-    public boolean add(Input input) {
+    public boolean add(Input input, User[] users) {
         try {
             User user = userProvider.create(input);
             if(user == null) return false;
-            for (int i = 0; i < App.users.length; i++) {
-                if (App.users[i] == null) {
-                    App.users[i] = user;
+            for (int i = 0; i < users.length; i++) {
+                if (users[i] == null) {
+                    users[i] = user;
                     break;
                 }
             }
@@ -26,5 +26,8 @@ public class UserService {
         }catch (Exception e){
             return false;
         }
+    }
+    public String printList(User[] users) {
+        return userProvider.getList(users);
     }
 }

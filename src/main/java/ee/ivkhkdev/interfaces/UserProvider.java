@@ -5,5 +5,5 @@ import ee.ivkhkdev.model.User;
 
 public interface UserProvider {
     User create(Input input);
-    String getList();
+    String getList(User[] users);
 }

@@ -1,7 +1,10 @@
 package ee.ivkhkdev.interfaces.impl;
 
+import ee.ivkhkdev.App;
 import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.interfaces.UserProvider;
+import ee.ivkhkdev.model.Author;
+import ee.ivkhkdev.model.Book;
 import ee.ivkhkdev.model.User;
 
 public class AppHelperUsers implements UserProvider {
@@ -23,8 +26,20 @@ public class AppHelperUsers implements UserProvider {
     }
 
     @Override
-    public String getList() {
-        return "";
+    public String getList(User[] users) {
+        StringBuilder sbUsers = new StringBuilder();
+        for (int i = 0; i < users.length; i++) {
+            User user = users[i];
+            if(user == null) {continue;}
+            sbUsers.append(String.format("%d. %s %s. %s%n",
+                    i + 1,
+                    user.getFirstname(),
+                    user.getLastname(),
+                    user.getPhone()
+                )
+            );
+        }
+        return sbUsers.toString();
     }
 
 
