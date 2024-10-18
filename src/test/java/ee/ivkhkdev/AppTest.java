@@ -1,11 +1,12 @@
 package ee.ivkhkdev;
 
-import ee.ivkhkdev.handlers.BookService;
+import ee.ivkhkdev.interfaces.UserProvider;
+import ee.ivkhkdev.services.BookService;
 import ee.ivkhkdev.interfaces.BookProvider;
-import ee.ivkhkdev.interfaces.InputProvider;
-import ee.ivkhkdev.interfaces.impl.AppBookHalper;
+import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
+import ee.ivkhkdev.services.UserService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,20 +35,22 @@ class AppTest {
     @Test
     void testAppRun() {
         //Создаем заглушку
-        InputProvider inputMock = Mockito.mock(InputProvider.class);
-        when(inputMock.getInput()).thenReturn("1","2","0");// Задаем значение ввода
+        Input inputMock = Mockito.mock(Input.class);
+        when(inputMock.getString()).thenReturn("1","2","0");// Задаем значение ввода
         //Создаем заглушку
         BookProvider bookProviderMock = Mockito.mock(BookProvider.class);
+        UserProvider userProviderMock = Mockito.mock(UserProvider.class);
         //Создаем массив авторов и инициируем его автором
         Author[] authors = new Author[1];
         Author author = new Author("Lev","Tolstoy");
         authors[0] = author;
         //Задаем значение, которое вставит bookProviderMock
-        when(bookProviderMock.createBook(inputMock)).thenReturn(new Book("Voina i mir",authors,2000));
+        when(bookProviderMock.create(inputMock)).thenReturn(new Book("Voina i mir",authors,2000));
         when(bookProviderMock.getList()).thenReturn("1. Voina i mir. Lev, Tolstoy. 2000");
 
-        BookService bookService = new BookService(bookProviderMock);
-        App app = new App(inputMock,bookService);
+        BookService bookServiceMock = new BookService(bookProviderMock);
+        UserService userServiceMock = new UserService(userProviderMock);
+        App app = new App(inputMock,bookServiceMock,userServiceMock);
         app.run();
         System.setOut(new PrintStream(outDefault));
         System.out.println(outContent.toString());

@@ -1,19 +1,24 @@
 package ee.ivkhkdev;
 
-import ee.ivkhkdev.handlers.BookService;
-import ee.ivkhkdev.interfaces.InputProvider;
+import ee.ivkhkdev.model.User;
+import ee.ivkhkdev.services.BookService;
+import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.model.Book;
+import ee.ivkhkdev.services.UserService;
 
 public class App {
 
     public static Book[] books = new Book[100];
+    public static User[] users = new User[100];
 
     private final BookService bookService;
-    private final InputProvider inputProvider;
+    private final UserService userService;
+    private final Input input;
 
-    public App(InputProvider inputProvider,BookService bookService) {
+    public App(Input input, BookService bookService, UserService userService) {
         this.bookService = bookService;
-        this.inputProvider = inputProvider;
+        this.input = input;
+        this.userService = userService;
     }
 
     public void run() {
@@ -25,19 +30,28 @@ public class App {
             System.out.println("0. Выйти из программы");
             System.out.println("1. Добавить книгу");
             System.out.println("2. Список книг");
+            System.out.println("3. Добавить читателя");
             System.out.print("Введите номер задачи: ");
-            int task = Integer.parseInt(inputProvider.getInput());
+            int task = Integer.parseInt(input.getString());
             switch (task) {
                 case 0:
                     repeat=false;
                     break;
                 case 1:
                     System.out.println("----- Добавление книги -----");
-                    bookService.addBbook(inputProvider);
+                    bookService.add(input);
                     break;
                 case 2:
                     System.out.println("----- Список книг -----");
                     System.out.println(bookService.printListBooks());
+                    break;
+                case 3:
+                    System.out.println("----- Добавление читателя -----");
+                    if(userService.add(input)){
+                        System.out.println("Читатель добавлен");
+                    }else{
+                        System.out.println("Читателя добавить не удалось");
+                    };
                     break;
                 default:
                     System.out.println("Выберите задачу из списка!");
