@@ -1,20 +1,19 @@
 package ee.ivkhkdev.services;
 
-import ee.ivkhkdev.apphelpers.AppHelper;
+import ee.ivkhkdev.repository.AppHelper;
+import ee.ivkhkdev.repository.Repository;
 import ee.ivkhkdev.model.Book;
+import ee.ivkhkdev.repository.Service;
 
 import java.util.List;
 
-public class BookService implements Service<Book>{
+public class BookService implements Service<Book>, Repository<Book> {
 
-    private final List<Book> books;
     private final AppHelper<Book> appHelperBook;
+    private final String fileName = "books";
 
-
-    public BookService(List<Book> books, AppHelper<Book> appHelperBook) {
-        this.books = books;
+    public BookService(AppHelper<Book> appHelperBook) {
         this.appHelperBook = appHelperBook;
-
     }
 
     @Override
@@ -22,7 +21,7 @@ public class BookService implements Service<Book>{
         try {
             Book book = appHelperBook.create();
             if(book == null) {return false;}
-            appHelperBook.getRepository().save(book);
+            save(book,fileName);
             return true;
         }catch(Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -42,12 +41,11 @@ public class BookService implements Service<Book>{
 
     @Override
     public void print() {
-        appHelperBook.printList(this.list());
+        appHelperBook.printList(load(fileName));
     }
 
     @Override
     public List<Book> list() {
-        return appHelperBook.getRepository().load();
-
+        return load(fileName);
     }
 }

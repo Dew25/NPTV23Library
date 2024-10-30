@@ -1,23 +1,22 @@
 package ee.ivkhkdev;
 
 
-import ee.ivkhkdev.input.Input;
+import ee.ivkhkdev.repository.Input;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
-import ee.ivkhkdev.services.Service;
+import ee.ivkhkdev.repository.Service;
 
-public class App {
+public class App implements Input{
 
     private final Service<Book> bookService;
-    private final Input input;
     private final Service<Author> authorService;
 
     public App(
-            Input input,
+
             Service<Book> bookService,
             Service<Author> authorService) {
 
-        this.input = input;
+
         this.bookService = bookService;
         this.authorService = authorService;
 
@@ -33,9 +32,8 @@ public class App {
             System.out.println("1. Добавить книгу");
             System.out.println("2. Список книг");
             System.out.println("3. Добавить автора");
-
             System.out.print("Введите номер задачи: ");
-            int task = Integer.parseInt(input.getString());
+            int task = Integer.parseInt(getString());
             switch (task) {
                 case 0:
                     repeat = false;
@@ -59,7 +57,6 @@ public class App {
                     } else {
                         System.out.println("Автора добавить не удалось");
                     }
-
                     break;
                 default:
                     System.out.println("Выберите задачу из списка!");

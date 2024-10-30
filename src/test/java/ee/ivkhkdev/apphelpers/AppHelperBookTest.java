@@ -1,22 +1,15 @@
 package ee.ivkhkdev.apphelpers;
 
-import ee.ivkhkdev.apphelpers.repository.FileRepository;
-import ee.ivkhkdev.input.Input;
+import ee.ivkhkdev.repository.Input;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
-import ee.ivkhkdev.services.AuthorService;
-import ee.ivkhkdev.services.BookService;
-import ee.ivkhkdev.services.Service;
-import org.junit.jupiter.api.AfterEach;
+import ee.ivkhkdev.repository.Service;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,14 +17,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class AppHelperBookTest {
-    @Mock
-    private Input input;
 
     @Mock
     private Service<Author> authorService;
-
-    @Mock
-    private FileRepository<Book> bookRepository;
 
     @InjectMocks
     private AppHelperBook appHelperBook;
@@ -43,7 +31,7 @@ class AppHelperBookTest {
 
     @Test
     void testCreateBookWithAuthors() {
-        when(input.getString()).thenReturn("My Book", "n", "1", "1", "2023");
+        when(appHelperBook.getString()).thenReturn("My Book", "n", "1", "1", "2023");
 
         List<Author> authors = new ArrayList<>();
         Author author = new Author();
@@ -61,18 +49,18 @@ class AppHelperBookTest {
         assertEquals(author.getAuthorName(), book.getAuthors().get(0).getAuthorName());
         assertEquals(2023, book.getPublishedYear());
 
-        verify(input, times(5)).getString();
+        verify(appHelperBook, times(5)).getString();
         verify(authorService, times(1)).list();
     }
 
     @Test
     void testCreateBookWithNewAuthor() {
-        when(input.getString()).thenReturn("My Book", "y");
+        when(appHelperBook.getString()).thenReturn("My Book", "y");
 
         Book book = appHelperBook.create();
 
         assertNull(book);
-        verify(input, times(2)).getString();
+        verify(appHelperBook, times(2)).getString();
     }
 
     @Test
@@ -90,7 +78,7 @@ class AppHelperBookTest {
 
         appHelperBook.printList(books);
 
-        verify(input, never()).getString();
+        verify(appHelperBook, never()).getString();
     }
 
 }

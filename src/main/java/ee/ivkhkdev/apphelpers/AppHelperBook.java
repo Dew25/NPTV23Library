@@ -1,49 +1,42 @@
 package ee.ivkhkdev.apphelpers;
 
-import ee.ivkhkdev.apphelpers.repository.FileRepository;
-import ee.ivkhkdev.input.Input;
+import ee.ivkhkdev.repository.AppHelper;
+import ee.ivkhkdev.repository.Input;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
-import ee.ivkhkdev.services.Service;
+import ee.ivkhkdev.repository.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class AppHelperBook implements AppHelper<Book> {
-    private final Input input;
-    private final Service<Author> authorService;
-    private final FileRepository<Book> bookRepository;
+public class AppHelperBook implements AppHelper<Book>, Input {
 
-    public AppHelperBook(Input input, Service<Author> authorService, FileRepository<Book> bookRepository) {
-        this.input = input;
+    private final Service<Author> authorService;
+
+
+    public AppHelperBook(Service<Author> authorService) {
         this.authorService = authorService;
-        this.bookRepository = bookRepository;
-    }
-    @Override
-    public FileRepository<Book> getRepository() {
-        return bookRepository;
     }
 
     @Override
     public Book create() {
         Book book = new Book();
         System.out.print("Название книги: ");
-        book.setTitle(input.getString());
+        book.setTitle(getString());
         authorService.print();
         System.out.println("Добавить нового автора (y/n): ");
-        String answer = input.getString();
+        String answer = getString();
         if(answer.equalsIgnoreCase("y")) {return null;}
         System.out.print("Укажите количество авторов книги: ");
-        int countAuthors = Integer.parseInt(input.getString());
+        int countAuthors = Integer.parseInt(getString());
 
         for (int i = 0; i < countAuthors; i++) {
             System.out.printf("Выбери номер автора из списка (%d из %d): ", i + 1, countAuthors);
-            int numberAuthor = Integer.parseInt(input.getString());
+            int numberAuthor = Integer.parseInt(getString());
             book.getAuthors().add(authorService.list().get(numberAuthor-1));
         }
 
         System.out.print("Год издания книги: ");
-        book.setPublishedYear(Integer.parseInt(input.getString()));
+        book.setPublishedYear(Integer.parseInt(getString()));
         return book;
     }
 

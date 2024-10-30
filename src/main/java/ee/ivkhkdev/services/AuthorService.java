@@ -1,17 +1,21 @@
 package ee.ivkhkdev.services;
 
-import ee.ivkhkdev.apphelpers.AppHelper;
+import ee.ivkhkdev.repository.AppHelper;
+import ee.ivkhkdev.repository.Repository;
 import ee.ivkhkdev.model.Author;
+import ee.ivkhkdev.repository.Service;
 
 import java.util.List;
 
-public class AuthorService implements Service<Author>{
-    private final List<Author> authors;
-    private final AppHelper<Author> appHelperAuthor;
+public class AuthorService implements Service<Author>, Repository<Author> {
 
-    public AuthorService(List<Author> authors, AppHelper<Author>  appHelperAuthor) {
-         this.authors = authors;
-         this.appHelperAuthor = appHelperAuthor;
+    private final AppHelper<Author> appHelperAuthor;
+    private final String fileName = "authors";
+
+
+    public AuthorService( AppHelper<Author>  appHelperAuthor) {
+        this.appHelperAuthor = appHelperAuthor;
+
     }
 
     @Override
@@ -19,7 +23,8 @@ public class AuthorService implements Service<Author>{
         try {
             Author author = appHelperAuthor.create();
             if(author == null) {return false;}
-            authors.add(author);
+            //authors.add(author);
+            save(author,fileName);
             return true;
         }catch(Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -44,6 +49,6 @@ public class AuthorService implements Service<Author>{
 
     @Override
     public List<Author> list() {
-        return authors;
+        return load(fileName);
     }
 }

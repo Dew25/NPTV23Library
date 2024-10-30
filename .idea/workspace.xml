@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4acfb5f-dda8-4640-9248-4bd057351b32" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/repository/Input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/repository/AppHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelperAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelperAuthor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/repository/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/repository/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelperBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelperBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/repository/FileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/repository/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/input/ConsoleInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/input/Input.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/AuthorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/repository/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AppHelperAuthorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AppHelperAuthorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AppHelperBookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AppHelperBookTest.java" afterDir="false" />
     </list>
@@ -21,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -53,6 +63,8 @@
     "JUnit.AppHelperAuthorTest.create.executor": "Run",
     "JUnit.AppHelperAuthorTest.executor": "Run",
     "JUnit.AppHelperAuthorTest.printList.executor": "Run",
+    "JUnit.AppHelperAuthorTest.testCreateAuthor.executor": "Run",
+    "JUnit.AppHelperAuthorTest.testCreateAuthorSuccess.executor": "Run",
     "JUnit.AppHelperAuthorTest.testPrintList.executor": "Run",
     "JUnit.AppHelperBookTest.createWithAddAuthor.executor": "Run",
     "JUnit.AppHelperBookTest.createWithoutAddAuthor.executor": "Run",
@@ -76,7 +88,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "refactoring",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/NPTV23Library",
+    "last_opened_file_path": "C:/Users/jvm/IdeaProjects/NPTV23Library",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,6 +98,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
@@ -110,7 +123,7 @@
       <recent name="ee.ivkhkdev.interfaces.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppHelperAuthorTest.testPrintList">
+  <component name="RunManager" selected="JUnit.AppHelperAuthorTest">
     <configuration name="AppHelperAuthorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <extension name="coverage">
@@ -126,6 +139,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppHelperAuthorTest.testCreateAuthor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperAuthorTest" />
+      <option name="METHOD_NAME" value="testCreateAuthor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppHelperAuthorTest.testCreateAuthorSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperAuthorTest" />
+      <option name="METHOD_NAME" value="testCreateAuthorSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppHelperAuthorTest.testPrintList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <extension name="coverage">
@@ -137,37 +182,6 @@
       <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
       <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperAuthorTest" />
       <option name="METHOD_NAME" value="testPrintList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppHelperBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperBookTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppHelperBookTest.testCreateBookWithNewAuthor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperBookTest" />
-      <option name="METHOD_NAME" value="testCreateBookWithNewAuthor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -191,19 +205,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppHelperAuthorTest.testPrintList" />
         <item itemvalue="JUnit.AppHelperAuthorTest" />
-        <item itemvalue="JUnit.AppHelperBookTest" />
+        <item itemvalue="JUnit.AppHelperAuthorTest.testCreateAuthor" />
+        <item itemvalue="JUnit.AppHelperAuthorTest.testCreateAuthorSuccess" />
+        <item itemvalue="JUnit.AppHelperAuthorTest.testPrintList" />
         <item itemvalue="JUnit.AppHelperBookTest.testPrintList" />
-        <item itemvalue="JUnit.AppHelperBookTest.testCreateBookWithNewAuthor" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
       </set>
     </attachedChunks>
   </component>
@@ -220,6 +234,7 @@
       <workItem from="1727847442786" duration="8853000" />
       <workItem from="1728623749998" duration="9331000" />
       <workItem from="1729230870150" duration="19013000" />
+      <workItem from="1730305745187" duration="9177000" />
     </task>
     <servers />
   </component>
