@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Storage<T> implements FileRepository<T>{
+    private String fileName;
+
+    public Storage(String fileName) {
+        this.fileName = fileName;
+    }
+
     @Override
     public void save(T entity) {
         List<T> list = this.load();
@@ -17,7 +23,7 @@ public class Storage<T> implements FileRepository<T>{
         FileOutputStream fileOutputStream;
         ObjectOutputStream objectOutputStream;
         try {
-            fileOutputStream = new FileOutputStream("books");
+            fileOutputStream = new FileOutputStream(fileName);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(list);
             objectOutputStream.flush();
@@ -33,7 +39,7 @@ public class Storage<T> implements FileRepository<T>{
         FileInputStream fileInputStream;
         ObjectInputStream objectInputStream;
         try {
-            fileInputStream = new FileInputStream("books");
+            fileInputStream = new FileInputStream(fileName);
             objectInputStream = new ObjectInputStream(fileInputStream);
             return (List<T>) objectInputStream.readObject();
         } catch (FileNotFoundException e) {

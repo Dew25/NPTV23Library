@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4acfb5f-dda8-4640-9248-4bd057351b32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/repository/FileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/repository/Storage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelperBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelperBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelperAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AppHelperAuthor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/repository/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/repository/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AppHelperAuthorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AppHelperAuthorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AppHelperBookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AppHelperBookTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,10 +53,14 @@
     "JUnit.AppHelperAuthorTest.create.executor": "Run",
     "JUnit.AppHelperAuthorTest.executor": "Run",
     "JUnit.AppHelperAuthorTest.printList.executor": "Run",
+    "JUnit.AppHelperAuthorTest.testPrintList.executor": "Run",
     "JUnit.AppHelperBookTest.createWithAddAuthor.executor": "Run",
     "JUnit.AppHelperBookTest.createWithoutAddAuthor.executor": "Run",
     "JUnit.AppHelperBookTest.executor": "Run",
     "JUnit.AppHelperBookTest.printList.executor": "Run",
+    "JUnit.AppHelperBookTest.testCreateBookWithAuthors.executor": "Run",
+    "JUnit.AppHelperBookTest.testCreateBookWithNewAuthor.executor": "Run",
+    "JUnit.AppHelperBookTest.testPrintList.executor": "Run",
     "JUnit.AppTest.executor": "Debug",
     "JUnit.AppTest.testAppRun.executor": "Run",
     "JUnit.AppTest.testAppRunAddBook.executor": "Run",
@@ -110,18 +110,92 @@
       <recent name="ee.ivkhkdev.interfaces.impl" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="java in NPTV23Library" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AppHelperAuthorTest.testPrintList">
+    <configuration name="AppHelperAuthorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperAuthorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppHelperAuthorTest.testPrintList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperAuthorTest" />
+      <option name="METHOD_NAME" value="testPrintList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppHelperBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperBookTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppHelperBookTest.testCreateBookWithNewAuthor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperBookTest" />
+      <option name="METHOD_NAME" value="testCreateBookWithNewAuthor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppHelperBookTest.testPrintList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AppHelperBookTest" />
+      <option name="METHOD_NAME" value="testPrintList" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in NPTV23Library" />
+        <item itemvalue="JUnit.AppHelperAuthorTest.testPrintList" />
+        <item itemvalue="JUnit.AppHelperAuthorTest" />
+        <item itemvalue="JUnit.AppHelperBookTest" />
+        <item itemvalue="JUnit.AppHelperBookTest.testPrintList" />
+        <item itemvalue="JUnit.AppHelperBookTest.testCreateBookWithNewAuthor" />
       </list>
     </recent_temporary>
   </component>

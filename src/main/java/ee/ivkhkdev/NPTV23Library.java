@@ -25,8 +25,9 @@ public class NPTV23Library {
         List<Book> books = new ArrayList<>();
         List<Author> authors = new ArrayList<>();
         Input input = new ConsoleInput();
-        FileRepository<Book> bookRepository = new Storage();
-        AppHelper<Author> appHelperAuthor = new AppHelperAuthor(input);
+        FileRepository<Book> bookRepository = new Storage("books");
+        FileRepository<Author> authorRepository = new Storage<>("authors");
+        AppHelper<Author> appHelperAuthor = new AppHelperAuthor(input,authorRepository);
         Service<Author> authorService = new AuthorService(authors, appHelperAuthor);
         AppHelper<Book> appHelperBook = new AppHelperBook(input,authorService, bookRepository);
         Service<Book> bookService = new BookService(books,appHelperBook);

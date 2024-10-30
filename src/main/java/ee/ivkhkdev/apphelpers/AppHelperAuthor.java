@@ -1,6 +1,7 @@
 package ee.ivkhkdev.apphelpers;
 
 import ee.ivkhkdev.App;
+import ee.ivkhkdev.apphelpers.repository.FileRepository;
 import ee.ivkhkdev.input.Input;
 import ee.ivkhkdev.model.Author;
 
@@ -9,11 +10,16 @@ import java.util.List;
 
 public class AppHelperAuthor implements AppHelper<Author> {
     private final Input input;
+    private final FileRepository<Author> authorRepository;
 
-    public AppHelperAuthor(Input input) {
+    public AppHelperAuthor(Input input, FileRepository<Author> authorRepository) {
         this.input = input;
+        this.authorRepository = authorRepository;
     }
 
+    public FileRepository<Author> getRepository() {
+        return authorRepository;
+    }
     @Override
     public Author create() {
         try {
