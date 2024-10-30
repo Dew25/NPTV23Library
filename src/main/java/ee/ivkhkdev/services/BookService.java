@@ -22,7 +22,7 @@ public class BookService implements Service<Book>{
         try {
             Book book = appHelperBook.create();
             if(book == null) {return false;}
-            books.add(book);
+            appHelperBook.getRepository().save(book);
             return true;
         }catch(Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -47,7 +47,7 @@ public class BookService implements Service<Book>{
 
     @Override
     public List<Book> list() {
-        return books;
+        return appHelperBook.getRepository().load();
 
     }
 }

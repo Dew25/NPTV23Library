@@ -32,7 +32,6 @@ public class App {
             System.out.println("0. Выйти из программы");
             System.out.println("1. Добавить книгу");
             System.out.println("2. Список книг");
-
             System.out.println("3. Добавить автора");
 
             System.out.print("Введите номер задачи: ");
@@ -43,13 +42,11 @@ public class App {
                     break;
                 case 1:
                     System.out.println("----- Добавление книги -----");
-
                     if (bookService.add()) {
                         System.out.println("Книга добавлена");
                     } else {
                         System.out.println("Книгу добавить не удалось");
                     }
-                    ;
                     break;
                 case 2:
                     System.out.println("----- Список книг -----");

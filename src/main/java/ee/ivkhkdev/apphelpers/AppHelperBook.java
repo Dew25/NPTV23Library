@@ -1,5 +1,6 @@
 package ee.ivkhkdev.apphelpers;
 
+import ee.ivkhkdev.apphelpers.repository.FileRepository;
 import ee.ivkhkdev.input.Input;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
@@ -11,10 +12,16 @@ import java.util.List;
 public class AppHelperBook implements AppHelper<Book> {
     private final Input input;
     private final Service<Author> authorService;
+    private final FileRepository<Book> bookRepository;
 
-    public AppHelperBook(Input input, Service<Author> authorService) {
+    public AppHelperBook(Input input, Service<Author> authorService, FileRepository<Book> bookRepository) {
         this.input = input;
         this.authorService = authorService;
+        this.bookRepository = bookRepository;
+    }
+    @Override
+    public FileRepository<Book> getRepository() {
+        return bookRepository;
     }
 
     @Override

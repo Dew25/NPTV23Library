@@ -1,8 +1,9 @@
 package ee.ivkhkdev.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Author {
+public class Author implements Serializable {
     private UUID id;
     private String authorName;
     private String authorSurname;
