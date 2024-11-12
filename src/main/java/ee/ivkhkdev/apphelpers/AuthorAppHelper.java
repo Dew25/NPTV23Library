@@ -45,17 +45,17 @@ public class AuthorAppHelper implements AppHelper<Author>, Input {
              * 9. вернуть список с измененным автором
              */
             this.printList(authors);
-            System.out.println("Выберите номер автора: ");
+            System.out.print("Выберите номер автора: ");
             int numberAuthor = Integer.parseInt(getString());
             System.out.println("Имя автора: "+ authors.get(numberAuthor -1).getAuthorName());
-            System.out.println("Изменить (y/n): ");
+            System.out.print("Изменить (y/n): ");
             String change = getString();
             if(change.equals("y")){
                 System.out.print("Новое имя автора: ");
                 authors.get(numberAuthor -1).setAuthorName(getString());
             }
             System.out.println("Фамилия автора: "+ authors.get(numberAuthor -1).getAuthorSurname());
-            System.out.println("Изменить (y/n): ");
+            System.out.print("Изменить (y/n): ");
             change = getString();
             if(change.equals("y")){
                 System.out.print("Новая фамилия автора: ");

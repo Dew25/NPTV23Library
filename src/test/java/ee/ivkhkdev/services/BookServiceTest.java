@@ -54,7 +54,11 @@ class BookServiceTest {
         verify(appHelperBook, times(1)).create();
         verify(storage, never()).save(any(), eq("books"));
     }
+    @Test
+    void testEditBookSuccessfully() {
 
+
+    }
     @Test
     void testListBooks() {
         List<Book> books = Collections.singletonList(new Book()); // Создаем список с одной книгой

@@ -1,6 +1,7 @@
 package ee.ivkhkdev.apphelpers;
 
 import ee.ivkhkdev.interfaces.AppHelper;
+import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.interfaces.Service;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
@@ -52,6 +53,33 @@ class BookAppHelperTest {
         assertEquals("Имя1", book.getAuthors().get(0).getAuthorName());
         assertEquals("Фамилия1", book.getAuthors().get(0).getAuthorSurname());
         assertEquals(2024, book.getPublishedYear());
+    }
+    @Test
+    public void testEditSuccessfull() {
+        Input mockedInput = Mockito.mock(Input.class);
+        when(authorService.list()).thenReturn(List.of(
+                new Author("Lev","Tolstoy"),
+                new Author("Ivan", "Turhenev"))
+        );
+        List<Book> books = List.of(new Book("Voina i mir",List.of(new Author("Ivan", "Turhenev")),2000));
+        bookAppHelper = new BookAppHelper(authorService) {
+            @Override
+            public String getString() {
+                return mockedInput.getString();
+            }
+        };
+        Mockito.when(mockedInput.getString()).thenReturn(
+                "1",
+                "y",
+                "NewName",
+                "y",
+                "1",
+                "2",
+                "2000"
+        );
+        List<Book> mockedBooks = bookAppHelper.update(books);
+        assertEquals(books.get(0).getTitle(), mockedBooks.get(0).getTitle());
+        assertEquals(books.get(0).getAuthors().get(0).getAuthorSurname(), "Turhenev");
     }
 
     @Test

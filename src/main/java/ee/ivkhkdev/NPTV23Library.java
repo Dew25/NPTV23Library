@@ -30,8 +30,8 @@ public class NPTV23Library {
         FileRepository<Card> cardStorage = new Storage<Card>();
         Service<User> userService = new UserService (userAppHelper,userStorage);
         Service<Author> authorService = new AuthorService(authorAppHelper,authorStorage);
-        AppHelper<Book> appHelperBook = new BookAppHelper(authorService);
-        Service<Book> bookService = new BookService(appHelperBook,bookStorage);
+        AppHelper<Book> bookAppHelper = new BookAppHelper(authorService);
+        Service<Book> bookService = new BookService(bookAppHelper,bookStorage);
         AppHelper<Card> cardAppHelper = new CardAppHelper(bookService,userService);
         Service<Card> cardService = new CardService(cardAppHelper, bookService, userService, cardStorage);
         App app = new App(bookService, authorService,userService,cardService);
