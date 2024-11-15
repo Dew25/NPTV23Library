@@ -16,7 +16,7 @@ public class App implements Input{
     private final Service<User> userService;
     private final Service<Card> cardService;
 
-    public App(Service<Book> bookService, Service<Author> authorService, Service<User>userService, Service<Card> cardService) {
+    public App(Service<Book> bookService, Service<Author> authorService, Service<User> userService, Service<Card> cardService) {
         this.bookService = bookService;
         this.authorService = authorService;
         this.userService = userService;
@@ -49,7 +49,6 @@ public class App implements Input{
                     break;
                 case 1:
                     System.out.println("----- Добавление книги -----");
-
                     if (bookService.add()) {
                         System.out.println("Книга добавлена");
                     } else {

@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4acfb5f-dda8-4640-9248-4bd057351b32" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/factory/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/factory/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/factory/JavaConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authors" beforeDir="false" afterPath="$PROJECT_DIR$/authors" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books" beforeDir="false" afterPath="$PROJECT_DIR$/books" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/UserAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/UserAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users" beforeDir="false" afterPath="$PROJECT_DIR$/users" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -114,9 +108,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "refactoring",
+    "git-widget-placeholder": "serviceLocator",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JVM/IdeaProjects_JVM/NPTV23Library",
+    "last_opened_file_path": "C:/Users/user/IdeaProjectsUser/NPTV23Library",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -150,7 +144,7 @@
       <recent name="ee.ivkhkdev.interfaces.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NPTV23Library">
+  <component name="RunManager" selected="JUnit.All in NPTV23Library">
     <configuration name="NPTV23Library" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.NPTV23Library" />
       <module name="NPTV23Library" />
@@ -160,6 +154,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in NPTV23Library" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,22 +197,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserAppHelperTest.testUpdateSuccessfull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.UserAppHelperTest" />
-      <option name="METHOD_NAME" value="testUpdateSuccessfull" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="java in NPTV23Library" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <option name="TEST_OBJECT" value="directory" />
@@ -221,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in NPTV23Library" />
         <item itemvalue="Application.NPTV23Library" />
         <item itemvalue="JUnit.BookAppHelperTest.testEditSuccessfull" />
         <item itemvalue="JUnit.UserAppHelperTest" />
         <item itemvalue="JUnit.java in NPTV23Library" />
-        <item itemvalue="JUnit.UserAppHelperTest.testUpdateSuccessfull" />
       </list>
     </recent_temporary>
   </component>
@@ -257,6 +243,7 @@
       <workItem from="1731395907101" duration="77000" />
       <workItem from="1731395993936" duration="6958000" />
       <workItem from="1731405844569" duration="11040000" />
+      <workItem from="1731665542644" duration="9972000" />
     </task>
     <servers />
   </component>
