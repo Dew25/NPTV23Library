@@ -1,7 +1,7 @@
 package ee.ivkhkdev;
 
-import ee.ivkhkdev.factory.Factory;
-import ee.ivkhkdev.factory.JavaConfiguration;
+import ee.ivkhkdev.framework.Factory;
+import ee.ivkhkdev.framework.config.JavaConfiguration;
 
 public class NPTV23Library {
 

@@ -1,7 +1,6 @@
-package ee.ivkhkdev.factory;
+package ee.ivkhkdev.framework;
 
-import java.util.HashMap;
-import java.util.Map;
+import ee.ivkhkdev.framework.config.Configuration;
 
 public class Factory {
     private static Factory instance = null;

@@ -1,4 +1,4 @@
-package ee.ivkhkdev.factory;
+package ee.ivkhkdev.framework.config;
 
 import ee.ivkhkdev.App;
 import ee.ivkhkdev.apphelpers.AuthorAppHelper;
@@ -21,7 +21,7 @@ import ee.ivkhkdev.storage.Storage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JavaConfiguration implements Configuration{
+public class JavaConfiguration implements Configuration {
     private Map<String,Object> map = new HashMap<>();
 
     public JavaConfiguration() {
