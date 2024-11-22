@@ -1,22 +1,25 @@
 package ee.ivkhkdev;
 
 
+import ee.ivkhkdev.interfaces.CartService;
 import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
 import ee.ivkhkdev.interfaces.Service;
 import ee.ivkhkdev.model.Card;
 import ee.ivkhkdev.model.User;
-import ee.ivkhkdev.services.CardService;
+import ee.ivkhkdev.services.CardServiceImpl;
 
-public class App implements Input{
+public class App {
 
+    private final Input input;
     private final Service<Book> bookService;
     private final Service<Author> authorService;
     private final Service<User> userService;
-    private final Service<Card> cardService;
+    private final CartService cardService;
 
-    public App(Service<Book> bookService, Service<Author> authorService, Service<User>userService, Service<Card> cardService) {
+    public App(Input input, Service<Book> bookService, Service<Author> authorService, Service<User>userService, CartService cardService) {
+        this.input = input;
         this.bookService = bookService;
         this.authorService = authorService;
         this.userService = userService;
@@ -42,7 +45,7 @@ public class App implements Input{
             System.out.println("10. Вернуть книгу");
 
             System.out.print("Введите номер задачи: ");
-            int task = Integer.parseInt(getString());
+            int task = Integer.parseInt(input.getString());
             switch (task) {
                 case 0:
                     repeat = false;
@@ -114,7 +117,7 @@ public class App implements Input{
                     break;
                 case 10:
                     System.out.println("------Возварат книги------");
-                    if (((CardService)cardService).returnBook()) {
+                    if (cardService.makeReturn()) {
                         System.out.println("Книга возвращена");
                     }else {
                     System.out.println("Книгу возвратить не удалось");

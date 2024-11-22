@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4acfb5f-dda8-4640-9248-4bd057351b32" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/input/ConsoleInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CardAppHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authors" beforeDir="false" afterPath="$PROJECT_DIR$/authors" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books" beforeDir="false" afterPath="$PROJECT_DIR$/books" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/CardAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/CardAppHelperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/UserAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/UserAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users" beforeDir="false" afterPath="$PROJECT_DIR$/users" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/CardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/UserAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/UserAppHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/CardServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/CardServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,83 +54,83 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.NPTV23Library.executor": "Run",
-    "JUnit.All in NPTV23Library.executor": "Run",
-    "JUnit.AppHelperAuthorTest.create.executor": "Run",
-    "JUnit.AppHelperAuthorTest.executor": "Run",
-    "JUnit.AppHelperAuthorTest.printList.executor": "Run",
-    "JUnit.AppHelperBookTest.createWithAddAuthor.executor": "Run",
-    "JUnit.AppHelperBookTest.createWithoutAddAuthor.executor": "Run",
-    "JUnit.AppHelperBookTest.executor": "Run",
-    "JUnit.AppHelperBookTest.printList.executor": "Run",
-    "JUnit.AppTest.executor": "Debug",
-    "JUnit.AppTest.testAppRun.executor": "Run",
-    "JUnit.AppTest.testAppRunAddBook.executor": "Run",
-    "JUnit.AppTest.testAppRunExit.executor": "Run",
-    "JUnit.AuthorAppHelperTest.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testCreate.executor": "Debug",
-    "JUnit.AuthorAppHelperTest.testCreateHandlesError.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testPrintList.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testUpdate.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testUpdate_InvalidInputAuthor.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testUpdate_NameNotChanged.executor": "Run",
-    "JUnit.AuthorServiceTest.add.executor": "Run",
-    "JUnit.AuthorServiceTest.executor": "Run",
-    "JUnit.AuthorServiceTest.testAddAuthorSuccessfully.executor": "Run",
-    "JUnit.AuthorServiceTest.testAddBookSuccessfully.executor": "Run",
-    "JUnit.BookAppHelperTest.executor": "Run",
-    "JUnit.BookAppHelperTest.testCreateWithExistingAuthors.executor": "Run",
-    "JUnit.BookAppHelperTest.testEditSuccessfull.executor": "Run",
-    "JUnit.BookAppHelperTest.testPrintList.executor": "Run",
-    "JUnit.BookServiceTest.executor": "Run",
-    "JUnit.BookServiceTest.testAddBookSuccessfully.executor": "Run",
-    "JUnit.CardAppHelperTest.executor": "Run",
-    "JUnit.CardAppHelperTest.testCreateCardSuccessfully.executor": "Run",
-    "JUnit.CardAppHelperTest.testCreateCardWithInvalidInput.executor": "Run",
-    "JUnit.CardAppHelperTest.testPrintListNoCards.executor": "Run",
-    "JUnit.CardAppHelperTest.testPrintListWithCards.executor": "Run",
-    "JUnit.CardAppHelperTest.testPrintList_EmptyCards.executor": "Run",
-    "JUnit.CardAppHelperTest.testReturnBookSuccessfully.executor": "Run",
-    "JUnit.CardAppHelperTest.testReturnBookWithInvalidCardSelection.executor": "Run",
-    "JUnit.CardServiceTest.testAddCardFailed.executor": "Run",
-    "JUnit.CardServiceTest.testAddCardSuccessfully.executor": "Run",
-    "JUnit.CardServiceTest.testReturnBookSuccessfully.executor": "Run",
-    "JUnit.UserAppHelperTest.executor": "Run",
-    "JUnit.UserAppHelperTest.testCreate_UserCreationFailure.executor": "Run",
-    "JUnit.UserAppHelperTest.testCreate_UserCreationSuccess.executor": "Run",
-    "JUnit.UserAppHelperTest.testPrintList.executor": "Run",
-    "JUnit.UserAppHelperTest.testUpdateSuccessfull.executor": "Run",
-    "JUnit.UserServiceTest.executor": "Run",
-    "JUnit.UserServiceTest.testAddUserSuccessfully.executor": "Run",
-    "JUnit.apphelpers in NPTV23Library.executor": "Run",
-    "JUnit.java in NPTV23Library.executor": "Run",
-    "Maven.NPTV23Library [clean].executor": "Run",
-    "Maven.NPTV23Library [compile].executor": "Run",
-    "Maven.NPTV23Library [package].executor": "Run",
-    "Maven.NPTV23Library [test].executor": "Run",
-    "Maven.NPTV23Library [validate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "refactoring",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JVM/IdeaProjects_JVM/NPTV23Library",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/JVM/IdeaProjects/NPTV23Library/src/main/java/ee/ivkhkdev/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.NPTV23Library.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in NPTV23Library.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppHelperAuthorTest.create.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppHelperAuthorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppHelperAuthorTest.printList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppHelperBookTest.createWithAddAuthor.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppHelperBookTest.createWithoutAddAuthor.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppHelperBookTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppHelperBookTest.printList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.AppTest.testAppRun.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTest.testAppRunAddBook.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTest.testAppRunExit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorAppHelperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorAppHelperTest.testCreate.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.AuthorAppHelperTest.testCreateHandlesError.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorAppHelperTest.testPrintList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorAppHelperTest.testUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorAppHelperTest.testUpdate_InvalidInputAuthor.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorAppHelperTest.testUpdate_NameNotChanged.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorServiceTest.add.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorServiceTest.testAddAuthorSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthorServiceTest.testAddBookSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookAppHelperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookAppHelperTest.testCreateWithExistingAuthors.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookAppHelperTest.testEditSuccessfull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookAppHelperTest.testPrintList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookServiceTest.testAddBookSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardAppHelperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardAppHelperTest.testCreateCardSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardAppHelperTest.testCreateCardWithInvalidInput.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardAppHelperTest.testPrintListNoCards.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardAppHelperTest.testPrintListWithCards.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardAppHelperTest.testPrintList_EmptyCards.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardAppHelperTest.testReturnBookSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardAppHelperTest.testReturnBookWithInvalidCardSelection.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.testAddCardFailed.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.testAddCardSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.testReturnBookSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAppHelperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAppHelperTest.testCreate_UserCreationFailure.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAppHelperTest.testCreate_UserCreationSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAppHelperTest.testPrintList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserAppHelperTest.testUpdateSuccessfull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.testAddUserSuccessfully.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.apphelpers in NPTV23Library.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in NPTV23Library.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NPTV23Library [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NPTV23Library [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NPTV23Library [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NPTV23Library [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.NPTV23Library [validate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JVM/IdeaProjects_JVM/NPTV23Library&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/JVM/IdeaProjects/NPTV23Library/src/main/java/ee/ivkhkdev/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ee.ivkhkdev.model" />
@@ -140,6 +141,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ee.ivkhkdev.apphelpers" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="ee.ivkhkdev.services" />

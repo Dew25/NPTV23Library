@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,11 +23,11 @@ class CardServiceTest {
     @Mock private Service<Book> bookService;
     @Mock private Service<User> userService;
     @Mock private FileRepository<Card> storage;
-    private CardService cardService;
+    private CardServiceImpl cardService;
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this); // Инициализация моков
-        cardService = new CardService(cardAppHelper, bookService, userService, storage);
+        cardService = new CardServiceImpl(cardAppHelper, bookService, userService, storage);
     }
     @Test
     void testAddCardSuccessfully() {
@@ -100,7 +99,7 @@ class CardServiceTest {
         doNothing().when(storage).saveAll(modifiedCards, "cards");
 
         // Передаем шпион в сервис
-        cardService = new CardService(cardAppHelperSpy, bookService, userService, storage);
+        cardService = new CardServiceImpl(cardAppHelperSpy, bookService, userService, storage);
 
         // Проверка, что возврат книги прошел успешно
         boolean result = cardService.returnBook();

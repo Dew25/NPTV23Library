@@ -9,11 +9,13 @@ import ee.ivkhkdev.interfaces.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookAppHelper implements AppHelper<Book>, Input{
+public class BookAppHelper implements AppHelper<Book>{
 
     private final Service<Author> authorService;
+    private final Input input;
 
-    public BookAppHelper(Service<Author> authorService) {
+    public BookAppHelper(Input input, Service<Author> authorService) {
+        this.input = input;
         this.authorService = authorService;
     }
 
@@ -21,22 +23,22 @@ public class BookAppHelper implements AppHelper<Book>, Input{
     public Book create() {
         Book book = new Book();
         System.out.print("Название книги: ");
-        book.setTitle(getString());
+        book.setTitle(input.getString());
         authorService.print();
         System.out.print("Добавить нового автора (y/n): ");
-        String answer = getString();
+        String answer = input.getString();
         if(answer.equalsIgnoreCase("y")) {return null;}
         System.out.print("Укажите количество авторов книги: ");
-        int countAuthors = Integer.parseInt(getString());
+        int countAuthors = Integer.parseInt(input.getString());
 
         for (int i = 0; i < countAuthors; i++) {
             System.out.printf("Выбери номер автора из списка (%d из %d): ", i + 1, countAuthors);
-            int numberAuthor = Integer.parseInt(getString());
+            int numberAuthor = Integer.parseInt(input.getString());
             book.getAuthors().add(authorService.list().get(numberAuthor-1));
         }
 
         System.out.print("Год издания книги: ");
-        book.setPublishedYear(Integer.parseInt(getString()));
+        book.setPublishedYear(Integer.parseInt(input.getString()));
         return book;
     }
 
@@ -62,13 +64,13 @@ public class BookAppHelper implements AppHelper<Book>, Input{
         try {
             this.printList(books);
             System.out.print("Выберите номер книги: ");
-            int numberBook = Integer.parseInt(getString());
+            int numberBook = Integer.parseInt(input.getString());
             System.out.println("Название книги: "+ books.get(numberBook -1).getTitle());
             System.out.print("Изменить (y/n): ");
-            String change = getString();
+            String change = input.getString();
             if(change.equals("y")){
                 System.out.print("Новое название: ");
-                books.get(numberBook -1).setTitle(getString());
+                books.get(numberBook -1).setTitle(input.getString());
             }
             System.out.println("Список авторов книги");
             StringBuilder sb = new StringBuilder();
@@ -77,25 +79,25 @@ public class BookAppHelper implements AppHelper<Book>, Input{
                 System.out.printf("%d. %s %s%n", i+1, author.getAuthorName(),author.getAuthorSurname());
             }
             System.out.print("Изменить (y/n): ");
-            change = getString();
+            change = input.getString();
             if(change.equals("y")){
                 authorService.print();
                 List<Author> bookAuthors = new ArrayList<>();
                 System.out.print("Количество авторов: ");
-                int numberAuthors = Integer.parseInt(getString());
+                int numberAuthors = Integer.parseInt(input.getString());
                 for (int i = 0; i < numberAuthors; i++) {
                     System.out.printf("Введите номер автора (%d из %d): ", i + 1, numberAuthors);
-                    int numberAuthor = Integer.parseInt(getString());
+                    int numberAuthor = Integer.parseInt(input.getString());
                     bookAuthors.add(authorService.list().get(numberAuthor-1));
                 }
                 books.get(numberBook -1).setAuthors(bookAuthors);
             }
             System.out.println("Год издания книги: "+ books.get(numberBook -1).getPublishedYear());
             System.out.print("Изменить (y/n): ");
-            change = getString();
+            change = input.getString();
             if(change.equals("y")){
                 System.out.print("Новый год издания: ");
-                books.get(numberBook -1).setPublishedYear(Integer.parseInt(getString()));
+                books.get(numberBook -1).setPublishedYear(Integer.parseInt(input.getString()));
             }
             return books;
         }catch (Exception e){

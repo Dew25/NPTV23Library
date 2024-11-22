@@ -25,25 +25,21 @@ class UserAppHelperTest {
     private UserAppHelper userAppHelper;
 
     @Mock
+    Input input;
+
+    @Mock
     private UserAppHelper inputMock;
 
 
     @BeforeEach
     void setUp() {
-        userAppHelper = new UserAppHelper() {
-            @Override
-            public String getString() {
-                return inputMock.getString();
-            }
-        };
-        MockitoAnnotations.openMocks(this);
 
     }
 
     @Test
     void testCreate_UserCreationSuccess() {
         // Настроим поведение моков
-        when(inputMock.getString()).thenReturn("Иван", "Иванов");
+        when(input.getString()).thenReturn("Иван", "Иванов");
 
         // Создаем пользователя
         User user = userAppHelper.create();
@@ -56,7 +52,7 @@ class UserAppHelperTest {
     @Test
     void testCreate_UserCreationFailure() {
         // Мокаем исключение, чтобы проверить обработку ошибок
-        when(inputMock.getString()).thenThrow(new RuntimeException("Ошибка ввода"));
+        when(input.getString()).thenThrow(new RuntimeException("Ошибка ввода"));
 
         // Создаем пользователя
         User user = userAppHelper.create();
@@ -67,13 +63,8 @@ class UserAppHelperTest {
     @Test
     public void testUpdateSuccessfull(){
         Input mockedInput = Mockito.mock(Input.class);
-        userAppHelper = new UserAppHelper() {
-            @Override
-            public String getString() {
-                return mockedInput.getString();
-            }
-        };
-        Mockito.when(mockedInput.getString()).thenReturn(
+
+        Mockito.when(input.getString()).thenReturn(
                 "1",
                 "y",
                 "NewName",

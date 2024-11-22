@@ -6,15 +6,21 @@ import ee.ivkhkdev.model.User;
 
 import java.util.List;
 
-public class UserAppHelper implements AppHelper<User>, Input {
+public class UserAppHelper implements AppHelper<User> {
+    private final Input input;
+
+    public UserAppHelper(Input input) {
+        this.input = input;
+    }
+
     @Override
     public User create() {
         try {
             User user = new User();
             System.out.print("Имя читателя: ");
-            user.setFirstname(getString());
+            user.setFirstname(input.getString());
             System.out.print("Фамилия читателя: ");
-            user.setLastname(getString());
+            user.setLastname(input.getString());
             return user;
         }catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -41,27 +47,27 @@ public class UserAppHelper implements AppHelper<User>, Input {
              */
             this.printList(users);
             System.out.print("Выберите номер пользователя: ");
-            int numberUser = Integer.parseInt(getString());
+            int numberUser = Integer.parseInt(input.getString());
             System.out.print("Имя пользователя: "+ users.get(numberUser -1).getFirstname());
             System.out.print("Изменить (y/n): ");
-            String change = getString();
+            String change = input.getString();
             if(change.equals("y")){
                 System.out.print("Новое имя пользователя: ");
-                users.get(numberUser -1).setFirstname(getString());
+                users.get(numberUser -1).setFirstname(input.getString());
             }
             System.out.print("Фамилия пользователя: "+ users.get(numberUser -1).getLastname());
             System.out.print("Изменить (y/n): ");
-            change = getString();
+            change = input.getString();
             if(change.equals("y")){
                 System.out.print("Новая фамилия пользователя: ");
-                users.get(numberUser -1).setLastname(getString());
+                users.get(numberUser -1).setLastname(input.getString());
             }
             System.out.print("Телефон пользователя: "+ users.get(numberUser -1).getPhone());
             System.out.print("Изменить (y/n): ");
-            change = getString();
+            change = input.getString();
             if(change.equals("y")){
                 System.out.print("Новый телефон пользователя: ");
-                users.get(numberUser -1).setPhone(getString());
+                users.get(numberUser -1).setPhone(input.getString());
             }
             return users;
         }catch (Exception e){

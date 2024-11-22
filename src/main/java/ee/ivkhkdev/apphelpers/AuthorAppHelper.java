@@ -7,10 +7,12 @@ import ee.ivkhkdev.model.Author;
 import java.util.List;
 
 
-public class AuthorAppHelper implements AppHelper<Author>, Input {
+public class AuthorAppHelper implements AppHelper<Author>{
 
-    public AuthorAppHelper() {
+    private final Input input;
 
+    public AuthorAppHelper(Input input) {
+        this.input = input;
     }
 
 
@@ -19,9 +21,9 @@ public class AuthorAppHelper implements AppHelper<Author>, Input {
         try {
             Author author = new Author();
             System.out.print("Имя автора: ");
-            author.setAuthorName(getString());
+            author.setAuthorName(input.getString());
             System.out.print("Фамилия автора: ");
-            author.setAuthorSurname(getString());
+            author.setAuthorSurname(input.getString());
             return author;
         }catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -46,20 +48,20 @@ public class AuthorAppHelper implements AppHelper<Author>, Input {
              */
             this.printList(authors);
             System.out.print("Выберите номер автора: ");
-            int numberAuthor = Integer.parseInt(getString());
+            int numberAuthor = Integer.parseInt(input.getString());
             System.out.println("Имя автора: "+ authors.get(numberAuthor -1).getAuthorName());
             System.out.print("Изменить (y/n): ");
-            String change = getString();
+            String change = input.getString();
             if(change.equals("y")){
                 System.out.print("Новое имя автора: ");
-                authors.get(numberAuthor -1).setAuthorName(getString());
+                authors.get(numberAuthor -1).setAuthorName(input.getString());
             }
             System.out.println("Фамилия автора: "+ authors.get(numberAuthor -1).getAuthorSurname());
             System.out.print("Изменить (y/n): ");
-            change = getString();
+            change = input.getString();
             if(change.equals("y")){
                 System.out.print("Новая фамилия автора: ");
-                authors.get(numberAuthor -1).setAuthorSurname(getString());
+                authors.get(numberAuthor -1).setAuthorSurname(input.getString());
             }
             return authors;
         }catch (Exception e){

@@ -1,19 +1,22 @@
 package ee.ivkhkdev.apphelpers;
 
-import ee.ivkhkdev.interfaces.AppHelper;
+import ee.ivkhkdev.interfaces.CardAppHelper;
 import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.interfaces.Service;
 import ee.ivkhkdev.model.Book;
 import ee.ivkhkdev.model.Card;
 import ee.ivkhkdev.model.User;
+
 import java.time.LocalDate;
 import java.util.List;
 
-public class CardAppHelper implements AppHelper<Card>, Input {
+public class CardAppHelperImpl implements CardAppHelper {
     private final Service<Book> bookService;
     private final Service<User> userService;
+    private final Input input;
 
-    public CardAppHelper(Service<Book> bookService, Service<User>userService) {
+    public CardAppHelperImpl(Input input,Service<Book> bookService, Service<User>userService) {
+        this.input = input;
         this.bookService = bookService;
         this.userService = userService;
 
@@ -24,12 +27,12 @@ public class CardAppHelper implements AppHelper<Card>, Input {
             Card card = new Card();
             bookService.print();
             System.out.print("Выберите номер книги: ");
-            int numberBook = Integer.parseInt(getString());
+            int numberBook = Integer.parseInt(input.getString());
             Book book = bookService.list().get(numberBook-1);
             card.setBook(book);
             userService.print();
             System.out.print("Выберите номер пользователя: ");
-            int numberUser = Integer.parseInt(getString());
+            int numberUser = Integer.parseInt(input.getString());
             User user = userService.list().get(numberUser-1);
             card.setUser(user);
             card.setBorrowedBookDate(LocalDate.now());
@@ -74,11 +77,12 @@ public class CardAppHelper implements AppHelper<Card>, Input {
      *  добавляем в карту дату возврата
      *  возвращаем измененный список карт
      */
+    @Override
     public List<Card> returnBook(List<Card> cards) {
         try {
             this.printList(cards);
             System.out.print("Выберите номер возвращаемой книги: ");
-            int numberCard = Integer.parseInt(getString());
+            int numberCard = Integer.parseInt(input.getString());
             cards.get(numberCard-1).setReturnedBookDate(LocalDate.now());
             return cards;
         }catch (Exception e){
