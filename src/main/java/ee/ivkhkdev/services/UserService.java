@@ -1,40 +1,43 @@
 package ee.ivkhkdev.services;
 
 import ee.ivkhkdev.interfaces.AppHelper;
-import ee.ivkhkdev.interfaces.FileRepository;
-import ee.ivkhkdev.interfaces.Input;
-import ee.ivkhkdev.interfaces.Service;
-import ee.ivkhkdev.model.Author;
+import ee.ivkhkdev.interfaces.AppRepository;
+import ee.ivkhkdev.interfaces.AppService;
 import ee.ivkhkdev.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-public class UserService implements Service<User>, Input {
+@Service
+public class UserService implements AppService<User>{
     private final String fileName="users";
-    private final AppHelper<User> userAppHelper;
-    private final FileRepository<User> storage;
-
-    public UserService(AppHelper<User> userAppHelper, FileRepository<User> storage) {
-        this.storage = storage;
-        this.userAppHelper = userAppHelper;
-    }
+    @Autowired private AppHelper<User> userAppHelper;
+    @Autowired private AppRepository<User> userAppRepository;
 
     @Override
     public boolean add() {
-        User user = userAppHelper.create();
-        if(user == null) {return false;}
-        storage.save(user,fileName);
-        return true;
+        try {
+            Optional<User> user = userAppHelper.create();
+            if(user.isPresent()) {
+                userAppRepository.save(user.get(),fileName);
+                return true;
+            }
+        }catch (Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
+        return false;
     }
 
     @Override
     public boolean edit() {
         try {
             List<User> modifedUsers = userAppHelper.update(list());
-            if(modifedUsers == null && modifedUsers.isEmpty()){
+            if(modifedUsers.isEmpty()){
                 return false;
             }
-            storage.saveAll(modifedUsers,fileName);
+            userAppRepository.saveAll(modifedUsers,fileName);
             return true;
         }catch (Exception e){
             System.out.println("Error: " + e.getMessage());
@@ -49,11 +52,11 @@ public class UserService implements Service<User>, Input {
 
     @Override
     public boolean print() {
-        return userAppHelper.printList(storage.load(fileName));
+        return userAppHelper.printList(this.list());
     }
 
     @Override
     public List<User> list() {
-        return storage.load(fileName);
+        return userAppRepository.load(fileName);
     }
 }

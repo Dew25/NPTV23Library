@@ -4,16 +4,19 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class Author implements Serializable {
-    private UUID id;
+    private static long idGenerator = 0L;
+    private Long id;
     private String authorName;
     private String authorSurname;
 
     public Author() {
-        this.id = UUID.randomUUID();
+        this.id = Author.idGenerator+1;
+        Author.idGenerator=id;
     }
 
     public Author(String authorName, String authorSurname) {
-        this.id = UUID.randomUUID();
+        this.id = Author.idGenerator+1;
+        Author.idGenerator=id;
         this.authorName = authorName;
         this.authorSurname = authorSurname;
     }
@@ -34,11 +37,11 @@ public class Author implements Serializable {
         this.authorName = authorName;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

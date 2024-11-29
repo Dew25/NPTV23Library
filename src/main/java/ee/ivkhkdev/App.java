@@ -5,28 +5,26 @@ import ee.ivkhkdev.interfaces.CartService;
 import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
-import ee.ivkhkdev.interfaces.Service;
-import ee.ivkhkdev.model.Card;
+import ee.ivkhkdev.interfaces.AppService;
 import ee.ivkhkdev.model.User;
-import ee.ivkhkdev.services.CardServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class App {
+@SpringBootApplication
+public class App implements CommandLineRunner {
+    @Autowired private Input input;
+    @Autowired private AppService<Book> bookService;
+    @Autowired private AppService<Author> authorService;
+    @Autowired private AppService<User> userService;
+    @Autowired private CartService cardService;
 
-    private final Input input;
-    private final Service<Book> bookService;
-    private final Service<Author> authorService;
-    private final Service<User> userService;
-    private final CartService cardService;
-
-    public App(Input input, Service<Book> bookService, Service<Author> authorService, Service<User>userService, CartService cardService) {
-        this.input = input;
-        this.bookService = bookService;
-        this.authorService = authorService;
-        this.userService = userService;
-        this.cardService = cardService;
+    public static void main(String[] args) {
+        SpringApplication.run(App.class, args);
     }
-
-    public void run() {
+    @Override
+    public void run(String... args) throws Exception {
         System.out.println("------ Библиотека группы NPTV23 ------");
         System.out.println("--------------------------------------");
         boolean repeat=true;
@@ -130,6 +128,7 @@ public class App {
         }while(repeat);
         System.out.println("До свидания :)");
     }
+
 
 
 }

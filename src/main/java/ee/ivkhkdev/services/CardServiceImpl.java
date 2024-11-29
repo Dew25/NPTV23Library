@@ -1,35 +1,35 @@
 package ee.ivkhkdev.services;
 
 
+import ee.ivkhkdev.interfaces.CartAppHelper;
+import ee.ivkhkdev.interfaces.CartService;
 import ee.ivkhkdev.interfaces.*;
-import ee.ivkhkdev.model.Book;
-import ee.ivkhkdev.model.Card;
-import ee.ivkhkdev.model.User;
+import ee.ivkhkdev.model.Cart;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
+import java.util.Optional;
 
-public class CardServiceImpl implements CartService, Input {
+@Service
+public class CardServiceImpl implements CartService {
     private final String fileName = "cards";
-    private final CardAppHelper cardAppHelper;
-    private final FileRepository<Card> storage;
-
-    public CardServiceImpl(CardAppHelper cardAppHelper, Service<Book> bookService, Service<User> userService, FileRepository<Card> repository) {
-        this.cardAppHelper = cardAppHelper;
-        this.storage = repository;
-    }
+    @Autowired private Input input;
+    @Autowired private CartAppHelper cardAppHelper;
+    @Autowired private AppRepository<Cart> cartAppRepository;
 
     @Override
     public boolean add() {
         try {
-            Card card = cardAppHelper.create();
-            if (card == null) {
-                return false;
+            Optional<Cart> card = cardAppHelper.create();
+            if (card.isPresent()) {
+                cartAppRepository.save(card.get(), fileName);
+                return true;
             }
-            storage.save(card, fileName);
-            return true;
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
-            return false;
         }
+        return false;
     }
 
     @Override
@@ -39,27 +39,27 @@ public class CardServiceImpl implements CartService, Input {
 
     @Override
     public boolean makeReturn() {
-        List<Card> modifedCards = cardAppHelper.returnBook(storage.load(fileName));
-        if (modifedCards == null) {
+        List<Cart> modifedCards = cardAppHelper.returnBook(cartAppRepository.load(fileName));
+        if (modifedCards.isEmpty()) {
             return false;
         }
-        storage.saveAll(modifedCards, fileName);
+        cartAppRepository.saveAll(modifedCards, fileName);
         return true;
     }
 
     @Override
-    public boolean remove(Card entity) {
+    public boolean remove(Cart entity) {
         return false;
     }
 
     @Override
     public boolean print() {
-        return cardAppHelper.printList(storage.load(fileName));
+        return cardAppHelper.printList(this.list());
     }
 
     @Override
-    public List<Card> list() {
-        return storage.load(fileName);
+    public List<Cart> list() {
+        return cartAppRepository.load(fileName);
     }
 }
 

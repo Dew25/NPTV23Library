@@ -3,28 +3,30 @@ package ee.ivkhkdev.apphelpers;
 import ee.ivkhkdev.interfaces.AppHelper;
 import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+@Component
 public class UserAppHelper implements AppHelper<User> {
-    private final Input input;
-
-    public UserAppHelper(Input input) {
-        this.input = input;
-    }
+    @Autowired
+    private Input input;
 
     @Override
-    public User create() {
+    public Optional<User> create() {
         try {
             User user = new User();
             System.out.print("Имя читателя: ");
             user.setFirstname(input.getString());
             System.out.print("Фамилия читателя: ");
             user.setLastname(input.getString());
-            return user;
+            return Optional.of(user);
         }catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
-            return null;
+            return Optional.empty();
         }
     }
 
@@ -71,17 +73,26 @@ public class UserAppHelper implements AppHelper<User> {
             }
             return users;
         }catch (Exception e){
-            return null;
+            return new ArrayList<>();
         }
     }
 
     @Override
     public boolean printList(List<User> users) {
+        if(users.isEmpty()){
+            System.out.println("Список читателей пуст");
+            return false;
+        }
         System.out.println("---------- Список читателей --------");
         for(int i=0;i<users.size();i++) {
             User user = users.get(i);
-            System.out.printf("%d. %s %s. %s%n", i+1,user.getFirstname(),user.getLastname(), user.getPhone());
+            System.out.printf("%d. %s %s. %s%n",
+                    i+1,
+                    user.getFirstname(),
+                    user.getLastname(),
+                    user.getPhone()
+            );
         }
-        return false;
+        return true;
     }
 }

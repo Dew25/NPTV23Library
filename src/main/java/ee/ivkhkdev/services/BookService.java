@@ -1,33 +1,29 @@
 package ee.ivkhkdev.services;
 
 import ee.ivkhkdev.interfaces.AppHelper;
-import ee.ivkhkdev.interfaces.Service;
-import ee.ivkhkdev.model.Author;
+import ee.ivkhkdev.interfaces.AppService;
 import ee.ivkhkdev.model.Book;
-import ee.ivkhkdev.interfaces.FileRepository;
-import ee.ivkhkdev.storage.Storage;
+import ee.ivkhkdev.interfaces.AppRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.util.List;
+import java.util.Optional;
 
-public class BookService implements Service<Book> {
-
-    private final AppHelper<Book> bookAppHelper;
+@Service
+public class BookService implements AppService<Book> {
     private final String fileName="books";
-    private final FileRepository<Book>  storage;
-
-    public BookService(AppHelper<Book> bookAppHelper, FileRepository<Book> storage) {
-        this.bookAppHelper = bookAppHelper;
-        this.storage = storage;
-    }
+    @Autowired private AppHelper<Book> bookAppHelper;
+    @Autowired private AppRepository<Book> bookAppRepository;
 
     @Override
     public boolean add() {
         try {
-            Book book = bookAppHelper.create();
-            if(book == null) {return false;}
-            storage.save(book,fileName);
-            return true;
+            Optional<Book> book = bookAppHelper.create();
+            if(book.isPresent()) {
+                bookAppRepository.save(book.get(),fileName);
+                return true;
+            }
         }catch(Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
@@ -38,15 +34,14 @@ public class BookService implements Service<Book> {
     public boolean edit() {
         try {
             List<Book> modifedBooks = bookAppHelper.update(list());
-            if(modifedBooks == null && modifedBooks.isEmpty()){
+            if(modifedBooks.isEmpty()){
                 return false;
             }
-            storage.saveAll(modifedBooks,fileName);
+            bookAppRepository.saveAll(modifedBooks,fileName);
             return true;
         }catch (Exception e){
             System.out.println("Error: " + e.getMessage());
         }
-
         return false;
     }
 
@@ -63,6 +58,6 @@ public class BookService implements Service<Book> {
 
     @Override
     public List<Book> list() {
-        return storage.load(fileName);
+        return bookAppRepository.load(fileName);
     }
 }

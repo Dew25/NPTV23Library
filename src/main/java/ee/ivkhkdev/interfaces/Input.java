@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public interface Input {
     default String getString(){
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return new Scanner(System.in).nextLine();
     }
 }

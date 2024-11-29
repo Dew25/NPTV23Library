@@ -5,27 +5,30 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class User implements Serializable {
-    private UUID id;
+    private static long idGenerator = 0L;
+    private Long id;
     private String firstname;
     private String lastname;
     private String phone;
 
     public User() {
-        this.id = UUID.randomUUID();
+        this.id = User.idGenerator+1;
+        User.idGenerator=id;
     }
 
     public User(String firstname, String lastname, String phone) {
-        this.id = UUID.randomUUID();
+        this.id = User.idGenerator+1;
+        User.idGenerator=id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

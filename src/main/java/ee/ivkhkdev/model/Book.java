@@ -7,27 +7,30 @@ import java.util.List;
 import java.util.UUID;
 
 public class Book implements Serializable {
-    private UUID id;
+    private static long idGenerator = 0L;
+    private Long id;
     private String title;
     private List<Author> authors = new ArrayList<>();
     private int publishedYear;
 
     public Book() {
-        this.id = UUID.randomUUID();
+        this.id = Book.idGenerator+1;
+        Book.idGenerator=id;
     }
 
     public Book(String title, List<Author> authors, int publishedYear) {
-        this.id = UUID.randomUUID();
+        this.id = Book.idGenerator+1;
+        Book.idGenerator=id;
         this.title = title;
         this.authors = authors;
         this.publishedYear = publishedYear;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

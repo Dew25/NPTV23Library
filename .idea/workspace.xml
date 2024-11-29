@@ -5,19 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4acfb5f-dda8-4640-9248-4bd057351b32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/input/ConsoleInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CardAppHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CartAppHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/AuthorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/CartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/CartAppHelperImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authors" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/books" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/CardAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/CardAppHelperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/CardAppHelperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/CartAppHelperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/UserAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/UserAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/CardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/UserAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/UserAppHelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/CardServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/CardServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/input/ConsoleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/input/ConsoleInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/AppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/AppHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CardAppHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/AppRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/AppService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/AuthorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/CardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/Storage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AuthorAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AuthorAppHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/CardAppHelperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/UserAppHelperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/AuthorServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/CardServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/UserServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +57,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -54,83 +84,94 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.NPTV23Library.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in NPTV23Library.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppHelperAuthorTest.create.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppHelperAuthorTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppHelperAuthorTest.printList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppHelperBookTest.createWithAddAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppHelperBookTest.createWithoutAddAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppHelperBookTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppHelperBookTest.printList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.AppTest.testAppRun.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppTest.testAppRunAddBook.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppTest.testAppRunExit.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorAppHelperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorAppHelperTest.testCreate.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.AuthorAppHelperTest.testCreateHandlesError.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorAppHelperTest.testPrintList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorAppHelperTest.testUpdate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorAppHelperTest.testUpdate_InvalidInputAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorAppHelperTest.testUpdate_NameNotChanged.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorServiceTest.add.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorServiceTest.testAddAuthorSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthorServiceTest.testAddBookSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookAppHelperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookAppHelperTest.testCreateWithExistingAuthors.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookAppHelperTest.testEditSuccessfull.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookAppHelperTest.testPrintList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BookServiceTest.testAddBookSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardAppHelperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardAppHelperTest.testCreateCardSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardAppHelperTest.testCreateCardWithInvalidInput.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardAppHelperTest.testPrintListNoCards.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardAppHelperTest.testPrintListWithCards.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardAppHelperTest.testPrintList_EmptyCards.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardAppHelperTest.testReturnBookSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardAppHelperTest.testReturnBookWithInvalidCardSelection.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardServiceTest.testAddCardFailed.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardServiceTest.testAddCardSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardServiceTest.testReturnBookSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserAppHelperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserAppHelperTest.testCreate_UserCreationFailure.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserAppHelperTest.testCreate_UserCreationSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserAppHelperTest.testPrintList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserAppHelperTest.testUpdateSuccessfull.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.testAddUserSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.apphelpers in NPTV23Library.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in NPTV23Library.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.NPTV23Library [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.NPTV23Library [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.NPTV23Library [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.NPTV23Library [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.NPTV23Library [validate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/JVM/IdeaProjects_JVM/NPTV23Library&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/JVM/IdeaProjects/NPTV23Library/src/main/java/ee/ivkhkdev/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.NPTV23Library.executor": "Run",
+    "JUnit.All in NPTV23Library.executor": "Run",
+    "JUnit.AppHelperAuthorTest.create.executor": "Run",
+    "JUnit.AppHelperAuthorTest.executor": "Run",
+    "JUnit.AppHelperAuthorTest.printList.executor": "Run",
+    "JUnit.AppHelperBookTest.createWithAddAuthor.executor": "Run",
+    "JUnit.AppHelperBookTest.createWithoutAddAuthor.executor": "Run",
+    "JUnit.AppHelperBookTest.executor": "Run",
+    "JUnit.AppHelperBookTest.printList.executor": "Run",
+    "JUnit.AppTest.executor": "Debug",
+    "JUnit.AppTest.testAppRun.executor": "Run",
+    "JUnit.AppTest.testAppRunAddBook.executor": "Run",
+    "JUnit.AppTest.testAppRunExit.executor": "Run",
+    "JUnit.AuthorAppHelperTest.create_shouldCreateAuthorSuccessfully.executor": "Run",
+    "JUnit.AuthorAppHelperTest.executor": "Run",
+    "JUnit.AuthorAppHelperTest.testCreate.executor": "Debug",
+    "JUnit.AuthorAppHelperTest.testCreateHandlesError.executor": "Run",
+    "JUnit.AuthorAppHelperTest.testPrintList.executor": "Run",
+    "JUnit.AuthorAppHelperTest.testUpdate.executor": "Run",
+    "JUnit.AuthorAppHelperTest.testUpdate_InvalidInputAuthor.executor": "Run",
+    "JUnit.AuthorAppHelperTest.testUpdate_NameNotChanged.executor": "Run",
+    "JUnit.AuthorServiceTest.add.executor": "Run",
+    "JUnit.AuthorServiceTest.executor": "Run",
+    "JUnit.AuthorServiceTest.testAddAuthorSuccessfully.executor": "Run",
+    "JUnit.AuthorServiceTest.testAddBookSuccessfully.executor": "Run",
+    "JUnit.BookAppHelperTest.create_shouldCreateBookSuccessfully.executor": "Run",
+    "JUnit.BookAppHelperTest.executor": "Run",
+    "JUnit.BookAppHelperTest.testCreateWithExistingAuthors.executor": "Run",
+    "JUnit.BookAppHelperTest.testEditSuccessfull.executor": "Run",
+    "JUnit.BookAppHelperTest.testPrintList.executor": "Run",
+    "JUnit.BookServiceTest.executor": "Run",
+    "JUnit.BookServiceTest.testAddBookSuccessfully.executor": "Run",
+    "JUnit.CardAppHelperTest.executor": "Run",
+    "JUnit.CardAppHelperTest.testCreateCardSuccessfully.executor": "Run",
+    "JUnit.CardAppHelperTest.testCreateCardWithInvalidInput.executor": "Run",
+    "JUnit.CardAppHelperTest.testPrintListNoCards.executor": "Run",
+    "JUnit.CardAppHelperTest.testPrintListWithCards.executor": "Run",
+    "JUnit.CardAppHelperTest.testPrintList_EmptyCards.executor": "Run",
+    "JUnit.CardAppHelperTest.testReturnBookSuccessfully.executor": "Run",
+    "JUnit.CardAppHelperTest.testReturnBookWithInvalidCardSelection.executor": "Run",
+    "JUnit.CardServiceTest.testAddCardFailed.executor": "Run",
+    "JUnit.CardServiceTest.testAddCardSuccessfully.executor": "Run",
+    "JUnit.CardServiceTest.testReturnBookSuccessfully.executor": "Run",
+    "JUnit.CartAppHelperImplTest.executor": "Run",
+    "JUnit.UserAppHelperTest.executor": "Run",
+    "JUnit.UserAppHelperTest.testCreate_UserCreationFailure.executor": "Run",
+    "JUnit.UserAppHelperTest.testCreate_UserCreationSuccess.executor": "Run",
+    "JUnit.UserAppHelperTest.testPrintList.executor": "Run",
+    "JUnit.UserAppHelperTest.testUpdateSuccessfull.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.testAddUserSuccessfully.executor": "Run",
+    "JUnit.apphelpers in NPTV23Library.executor": "Run",
+    "JUnit.java in NPTV23Library.executor": "Run",
+    "Maven.NPTV23Library [clean].executor": "Run",
+    "Maven.NPTV23Library [compile].executor": "Run",
+    "Maven.NPTV23Library [install].executor": "Run",
+    "Maven.NPTV23Library [package].executor": "Run",
+    "Maven.NPTV23Library [test].executor": "Run",
+    "Maven.NPTV23Library [validate].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.App.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "refactoring",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/jvm/IdeaProjects/NPTV23Library/src/test/java/ee/ivkhkdev/apphelpers",
+    "last_opened_file_path": "D:/JVM/IdeaProjects_JVM/NPTV23Library",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/JVM/IdeaProjects/NPTV23Library/src/main/java/ee/ivkhkdev/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ee.ivkhkdev.model" />
@@ -141,34 +182,31 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+      <recent name="ee.ivkhkdev.interfaces.CartAppHelper" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ee.ivkhkdev.apphelpers" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="ee.ivkhkdev.services" />
       <recent name="ee.ivkhkdev.apphelpers" />
+      <recent name="ee.ivkhkdev.interfaces" />
+      <recent name="ee.ivkhkdev.services" />
       <recent name="ee.ivkhkdev" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ee.ivkhkdev.interfaces.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NPTV23Library">
-    <configuration name="NPTV23Library" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.NPTV23Library" />
+  <component name="RunManager" selected="JUnit.BookAppHelperTest">
+    <configuration name="All in NPTV23Library" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookAppHelperTest.testEditSuccessfull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthorAppHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <extension name="coverage">
         <pattern>
@@ -177,29 +215,44 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.BookAppHelperTest" />
-      <option name="METHOD_NAME" value="testEditSuccessfull" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserAppHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.UserAppHelperTest" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AuthorAppHelperTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserAppHelperTest.testUpdateSuccessfull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookAppHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.interfaces.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.BookAppHelperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookAppHelperTest.create_shouldCreateBookSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.interfaces.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.BookAppHelperTest" />
+      <option name="METHOD_NAME" value="create_shouldCreateBookSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartAppHelperImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <extension name="coverage">
         <pattern>
@@ -208,36 +261,34 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.UserAppHelperTest" />
-      <option name="METHOD_NAME" value="testUpdateSuccessfull" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.CartAppHelperImplTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in NPTV23Library" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="NPTV23Library" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ee.ivkhkdev.App" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NPTV23Library" />
-        <item itemvalue="JUnit.BookAppHelperTest.testEditSuccessfull" />
-        <item itemvalue="JUnit.UserAppHelperTest" />
-        <item itemvalue="JUnit.java in NPTV23Library" />
-        <item itemvalue="JUnit.UserAppHelperTest.testUpdateSuccessfull" />
+        <item itemvalue="JUnit.BookAppHelperTest" />
+        <item itemvalue="JUnit.AuthorAppHelperTest" />
+        <item itemvalue="JUnit.All in NPTV23Library" />
+        <item itemvalue="JUnit.CartAppHelperImplTest" />
+        <item itemvalue="JUnit.BookAppHelperTest.create_shouldCreateBookSuccessfully" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
       </set>
     </attachedChunks>
   </component>
@@ -261,6 +312,8 @@
       <workItem from="1731395907101" duration="77000" />
       <workItem from="1731395993936" duration="6958000" />
       <workItem from="1731405844569" duration="11040000" />
+      <workItem from="1732819710544" duration="3411000" />
+      <workItem from="1732833691875" duration="16991000" />
     </task>
     <servers />
   </component>
@@ -279,6 +332,20 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="books" language="JAVA" />

@@ -3,33 +3,30 @@ package ee.ivkhkdev.apphelpers;
 import ee.ivkhkdev.interfaces.AppHelper;
 import ee.ivkhkdev.interfaces.Input;
 import ee.ivkhkdev.model.Author;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
-
+@Component
 public class AuthorAppHelper implements AppHelper<Author>{
 
-    private final Input input;
-
-    public AuthorAppHelper(Input input) {
-        this.input = input;
-    }
-
+    @Autowired private Input input;
 
     @Override
-    public Author create() {
+    public Optional<Author> create() {
         try {
             Author author = new Author();
             System.out.print("Имя автора: ");
             author.setAuthorName(input.getString());
             System.out.print("Фамилия автора: ");
             author.setAuthorSurname(input.getString());
-            return author;
+            return Optional.of(author);
         }catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
-            return null;
+            return Optional.empty();
         }
-
     }
 
     @Override

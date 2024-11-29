@@ -5,29 +5,33 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Card implements Serializable {
-    private UUID id;
+public class Cart implements Serializable {
+    private static long idGenerator = 0L;
+    private Long id;
     private Book book;
     private User user;
     private LocalDate borrowedBookDate;
     private LocalDate returnedBookDate;
 
-    public Card() {
-        this.id = UUID.randomUUID();
+    public Cart() {
+        this.id = Cart.idGenerator+1;
+        Cart.idGenerator=id;
     }
 
-    public Card(Book book, User user, LocalDate borrowedBookDate, LocalDate returnedBookDate) {
+    public Cart(Book book, User user, LocalDate borrowedBookDate, LocalDate returnedBookDate) {
+        this.id = Cart.idGenerator+1;
+        Cart.idGenerator=id;
         this.book = book;
         this.user = user;
         this.borrowedBookDate = borrowedBookDate;
         this.returnedBookDate = returnedBookDate;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -67,7 +71,7 @@ public class Card implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Card card = (Card) o;
+        Cart card = (Cart) o;
         return Objects.equals(id, card.id) && Objects.equals(book, card.book) && Objects.equals(user, card.user) && Objects.equals(borrowedBookDate, card.borrowedBookDate) && Objects.equals(returnedBookDate, card.returnedBookDate);
     }
 

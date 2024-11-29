@@ -1,30 +1,33 @@
 package ee.ivkhkdev.services;
 
 import ee.ivkhkdev.interfaces.AppHelper;
-import ee.ivkhkdev.interfaces.Service;
+import ee.ivkhkdev.interfaces.AppService;
 import ee.ivkhkdev.model.Author;
-import ee.ivkhkdev.interfaces.FileRepository;
-
+import ee.ivkhkdev.interfaces.AppRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
-public class AuthorService implements Service<Author> {
-
-    private final AppHelper<Author> authorAppHelper;
+@Service
+public class AuthorService implements AppService<Author> {
     private final String fileName = "authors";
-    private final FileRepository<Author> storage;
+    @Autowired private AppHelper<Author> authorAppHelper;
+    @Autowired private AppRepository<Author> authorAppRepository;
 
-    public AuthorService(AppHelper<Author> authorAppHelper, FileRepository<Author> storageAuthor) {
+    public AuthorService(AppHelper<Author> authorAppHelper, AppRepository<Author> storageAuthor) {
          this.authorAppHelper = authorAppHelper;
-         this.storage = storageAuthor;
+         this.authorAppRepository = storageAuthor;
     }
 
     @Override
     public boolean add() {
         try {
-            Author author = authorAppHelper.create();
-            if(author == null) {return false;}
-            storage.save(author,fileName);
-            return true;
+            Optional<Author> author = authorAppHelper.create();
+            if(author.isPresent()) {
+                authorAppRepository.save(author.get(),fileName);
+                return true;
+            }
         }catch(Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
@@ -35,15 +38,14 @@ public class AuthorService implements Service<Author> {
     public boolean edit() {
         try {
             List<Author> modifedAuthors = authorAppHelper.update(list());
-            if(modifedAuthors == null && modifedAuthors.isEmpty()){
+            if(modifedAuthors.isEmpty()){
                 return false;
             }
-            storage.saveAll(modifedAuthors,fileName);
+            authorAppRepository.saveAll(modifedAuthors,fileName);
             return true;
         }catch (Exception e){
             System.out.println("Error: " + e.getMessage());
         }
-
         return false;
     }
 
@@ -59,6 +61,6 @@ public class AuthorService implements Service<Author> {
 
     @Override
     public List<Author> list() {
-        return storage.load(fileName);
+        return authorAppRepository.load(fileName);
     }
 }

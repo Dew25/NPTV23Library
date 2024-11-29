@@ -1,9 +1,11 @@
 package ee.ivkhkdev.interfaces;
+import org.springframework.stereotype.Repository;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-public interface FileRepository<T> {
+@Repository
+public interface AppRepository<T> {
     default void save(T entity,String fileName){
         List<T> list = this.load(fileName);
         if(list == null){

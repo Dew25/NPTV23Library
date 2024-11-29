@@ -1,115 +1,163 @@
 package ee.ivkhkdev.apphelpers;
 
-import ee.ivkhkdev.interfaces.AppHelper;
+import ee.ivkhkdev.interfaces.AppService;
 import ee.ivkhkdev.interfaces.Input;
-import ee.ivkhkdev.interfaces.Service;
 import ee.ivkhkdev.model.Author;
 import ee.ivkhkdev.model.Book;
-import ee.ivkhkdev.services.AuthorService;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class BookAppHelperTest {
-    private AppHelper<Book> bookAppHelper;
-    private Service<Author> authorService;
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
+
+    @Mock
+    private AppService<Author> authorService;
+    @Mock
+    private AuthorAppHelper authorAppHelper;
+    @Mock
+    private Input input;
+
+    @InjectMocks
+    private BookAppHelper bookAppHelper;
 
     @BeforeEach
-    public void setUp() {
-        authorService = mock(AuthorService.class);
-        bookAppHelper = new BookAppHelper(authorService);
-        System.setOut(new PrintStream(outContent));
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    public void testCreateWithExistingAuthors() {
-        // Мокируем список авторов
-        List<Author> authors = new ArrayList<>();
-        authors.add(new Author("Имя1", "Фамилия1"));
-        authors.add(new Author("Имя2", "Фамилия2"));
+    void create_shouldCreateBookSuccessfully() {
+        // Arrange
+        List<Author> authors = List.of(new Author("John", "Doe"));
+        when(authorService.print()).thenReturn(true);
+        when(authorAppHelper.printList(authors)).thenReturn(true);
+        when(authorService.list()).thenReturn(authors);
+        when(input.getString()).thenReturn("Book Title", "n","1","1", "2000");
+
+        // Act
+        Optional<Book> result = bookAppHelper.create();
+
+        // Assert
+        assertTrue(result.isPresent());
+        Book book = result.get();
+        assertEquals("Book Title", book.getTitle());
+        assertEquals(2000, book.getPublishedYear());
+        assertEquals(authors, book.getAuthors());
+    }
+
+    @Test
+    void create_shouldReturnEmptyOptionalWhenNoAuthors() {
+        // Arrange
+        when(authorService.print()).thenReturn(false);
+
+        // Act
+        Optional<Book> result = bookAppHelper.create();
+
+        // Assert
+        assertFalse(result.isPresent());
+    }
+
+    @Test
+    void create_shouldHandleExceptionGracefully() {
+        // Arrange
+        when(input.getString()).thenThrow(new RuntimeException("Input error"));
+
+        // Act
+        Optional<Book> result = bookAppHelper.create();
+
+        // Assert
+        assertFalse(result.isPresent());
+    }
+
+    @Test
+    void update_shouldUpdateBookFields() {
+        // Arrange
+        Author author1 = new Author("John", "Doe");
+        Author author2 = new Author("Jane", "Smith");
+        List<Author> authors = List.of(author1, author2);
+
+        Book book = new Book("Old Title", authors, 1990);
+        List<Book> books = new ArrayList<>();
+        books.add(book);
+
+        when(input.getString())
+                .thenReturn("1", "y", "New Title", "y", "1","1","y","2000");
+        when(authorService.print()).thenReturn(true);
         when(authorService.list()).thenReturn(authors);
 
-        // Мокируем ввод
-        BookAppHelper spyHelper = (BookAppHelper) Mockito.spy(bookAppHelper);
-        // Не добавляем нового автора(n).Указываем количество авторов(1). Выбор автора (1), Год издания(2024)
-        doReturn("НазваниеКниги","n","1","1","2024").when(spyHelper).getString();
+        // Act
+        List<Book> updatedBooks = bookAppHelper.update(books);
 
-        Book book = spyHelper.create();
-
-        assertNotNull(book);
-        assertEquals("НазваниеКниги", book.getTitle());
-        assertEquals(1, book.getAuthors().size());
-        assertEquals("Имя1", book.getAuthors().get(0).getAuthorName());
-        assertEquals("Фамилия1", book.getAuthors().get(0).getAuthorSurname());
-        assertEquals(2024, book.getPublishedYear());
-    }
-    @Test
-    public void testEditSuccessfull() {
-        Input mockedInput = Mockito.mock(Input.class);
-        when(authorService.list()).thenReturn(List.of(
-                new Author("Lev","Tolstoy"),
-                new Author("Ivan", "Turhenev"))
-        );
-        List<Book> books = List.of(new Book("Voina i mir",List.of(new Author("Ivan", "Turhenev")),2000));
-        bookAppHelper = new BookAppHelper(authorService) {
-            @Override
-            public String getString() {
-                return mockedInput.getString();
-            }
-        };
-        Mockito.when(mockedInput.getString()).thenReturn(
-                "1",
-                "y",
-                "NewName",
-                "y",
-                "1",
-                "2",
-                "2000"
-        );
-        List<Book> mockedBooks = bookAppHelper.update(books);
-        assertEquals(books.get(0).getTitle(), mockedBooks.get(0).getTitle());
-        assertEquals(books.get(0).getAuthors().get(0).getAuthorSurname(), "Turhenev");
+        // Assert
+        assertEquals(1, updatedBooks.size());
+        Book updatedBook = updatedBooks.get(0);
+        assertEquals("New Title", updatedBook.getTitle());
+        assertEquals(2000, updatedBook.getPublishedYear());
+        assertEquals(List.of(author1), updatedBook.getAuthors());
     }
 
     @Test
-    public void testPrintList() {
-        List<Book> books = new ArrayList<>();
-        Book book1 = new Book();
-        book1.setTitle("Книга1");
-        book1.setPublishedYear(2021);
-        book1.getAuthors().add(new Author("Имя1", "Фамилия1"));
-        books.add(book1);
+    void update_shouldSkipFieldsIfNotModified() {
+        // Arrange
+        Author author = new Author("John", "Doe");
+        List<Author> authors = List.of(author);
 
-        Book book2 = new Book();
-        book2.setTitle("Книга2");
-        book2.setPublishedYear(2022);
-        book2.getAuthors().add(new Author("Имя2", "Фамилия2"));
-        books.add(book2);
+        Book book = new Book("Original Title", authors, 1990);
+        List<Book> books = List.of(book);
 
-        bookAppHelper.printList(books);
+        when(input.getString()).thenReturn("1", "n", "n", "n");
 
-        String expectedOutput1 = "1. Книга1. Имя1 Фамилия1. 2021";
-        String expectedOutput2 = "2. Книга2. Имя2 Фамилия2. 2022";
+        // Act
+        List<Book> updatedBooks = bookAppHelper.update(books);
 
-
-        assertTrue(outContent.toString().contains(expectedOutput1));
-        assertTrue(outContent.toString().contains(expectedOutput2));
+        // Assert
+        assertEquals(1, updatedBooks.size());
+        Book updatedBook = updatedBooks.get(0);
+        assertEquals("Original Title", updatedBook.getTitle());
+        assertEquals(1990, updatedBook.getPublishedYear());
+        assertEquals(authors, updatedBook.getAuthors());
     }
 
-    @AfterEach
-    public void tearDown() {
-        System.setOut(originalOut);
-        outContent.reset();
+    @Test
+    void update_shouldReturnEmptyListWhenNoBooks() {
+        // Act
+        List<Book> updatedBooks = bookAppHelper.update(new ArrayList<>());
+
+        // Assert
+        assertTrue(updatedBooks.isEmpty());
+    }
+
+    @Test
+    void printList_shouldPrintBooks() {
+        // Arrange
+        Author author = new Author("John", "Doe");
+        List<Author> authors = List.of(author);
+
+        Book book = new Book("Book Title", authors, 2000);
+        List<Book> books = List.of(book);
+
+        // Act
+        boolean result = bookAppHelper.printList(books);
+
+        // Assert
+        assertTrue(result);
+    }
+
+    @Test
+    void printList_shouldReturnFalseForEmptyList() {
+        // Act
+        boolean result = bookAppHelper.printList(new ArrayList<>());
+
+        // Assert
+        assertFalse(result);
     }
 }
