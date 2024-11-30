@@ -1,58 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4acfb5f-dda8-4640-9248-4bd057351b32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CartAppHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/AuthorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/CartRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/CartAppHelperImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/UserAppHelperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/AuthorServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authors" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/books" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/NPTV23Library.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/CardAppHelperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/CartAppHelperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/UserAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/UserAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/input/ConsoleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/input/ConsoleInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/AppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/AppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CardAppHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/FileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/AppRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/interfaces/AppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/AuthorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/CardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/storage/Storage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AuthorAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AuthorAppHelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/BookAppHelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/CardAppHelperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/UserAppHelperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/AuthorServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/CardServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/UserServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="718">
+              <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#891#892#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,19 +50,69 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java" />
+      </list>
+    </option>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
-}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2mdqvl8Iugjvdromy8E7XYERua2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="NPTV23Library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NPTV23Library" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Tests">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -86,89 +120,31 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.NPTV23Library.executor": "Run",
     "JUnit.All in NPTV23Library.executor": "Run",
-    "JUnit.AppHelperAuthorTest.create.executor": "Run",
-    "JUnit.AppHelperAuthorTest.executor": "Run",
-    "JUnit.AppHelperAuthorTest.printList.executor": "Run",
-    "JUnit.AppHelperBookTest.createWithAddAuthor.executor": "Run",
-    "JUnit.AppHelperBookTest.createWithoutAddAuthor.executor": "Run",
-    "JUnit.AppHelperBookTest.executor": "Run",
-    "JUnit.AppHelperBookTest.printList.executor": "Run",
-    "JUnit.AppTest.executor": "Debug",
-    "JUnit.AppTest.testAppRun.executor": "Run",
-    "JUnit.AppTest.testAppRunAddBook.executor": "Run",
-    "JUnit.AppTest.testAppRunExit.executor": "Run",
-    "JUnit.AuthorAppHelperTest.create_shouldCreateAuthorSuccessfully.executor": "Run",
-    "JUnit.AuthorAppHelperTest.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testCreate.executor": "Debug",
-    "JUnit.AuthorAppHelperTest.testCreateHandlesError.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testPrintList.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testUpdate.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testUpdate_InvalidInputAuthor.executor": "Run",
-    "JUnit.AuthorAppHelperTest.testUpdate_NameNotChanged.executor": "Run",
-    "JUnit.AuthorServiceTest.add.executor": "Run",
+    "JUnit.AuthorServiceTest.edit_ShouldReturnTrue_WhenAuthorsAreUpdatedAndSaved.executor": "Run",
     "JUnit.AuthorServiceTest.executor": "Run",
-    "JUnit.AuthorServiceTest.testAddAuthorSuccessfully.executor": "Run",
-    "JUnit.AuthorServiceTest.testAddBookSuccessfully.executor": "Run",
-    "JUnit.BookAppHelperTest.create_shouldCreateBookSuccessfully.executor": "Run",
-    "JUnit.BookAppHelperTest.executor": "Run",
-    "JUnit.BookAppHelperTest.testCreateWithExistingAuthors.executor": "Run",
-    "JUnit.BookAppHelperTest.testEditSuccessfull.executor": "Run",
-    "JUnit.BookAppHelperTest.testPrintList.executor": "Run",
+    "JUnit.AuthorServiceTest.print_ShouldReturnTrue_WhenAuthorsArePrinted.executor": "Run",
+    "JUnit.BookServiceTest (1).executor": "Debug",
     "JUnit.BookServiceTest.executor": "Run",
-    "JUnit.BookServiceTest.testAddBookSuccessfully.executor": "Run",
-    "JUnit.CardAppHelperTest.executor": "Run",
-    "JUnit.CardAppHelperTest.testCreateCardSuccessfully.executor": "Run",
-    "JUnit.CardAppHelperTest.testCreateCardWithInvalidInput.executor": "Run",
-    "JUnit.CardAppHelperTest.testPrintListNoCards.executor": "Run",
-    "JUnit.CardAppHelperTest.testPrintListWithCards.executor": "Run",
-    "JUnit.CardAppHelperTest.testPrintList_EmptyCards.executor": "Run",
-    "JUnit.CardAppHelperTest.testReturnBookSuccessfully.executor": "Run",
-    "JUnit.CardAppHelperTest.testReturnBookWithInvalidCardSelection.executor": "Run",
-    "JUnit.CardServiceTest.testAddCardFailed.executor": "Run",
-    "JUnit.CardServiceTest.testAddCardSuccessfully.executor": "Run",
-    "JUnit.CardServiceTest.testReturnBookSuccessfully.executor": "Run",
-    "JUnit.CartAppHelperImplTest.executor": "Run",
+    "JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted.executor": "Debug",
     "JUnit.UserAppHelperTest.executor": "Run",
-    "JUnit.UserAppHelperTest.testCreate_UserCreationFailure.executor": "Run",
-    "JUnit.UserAppHelperTest.testCreate_UserCreationSuccess.executor": "Run",
-    "JUnit.UserAppHelperTest.testPrintList.executor": "Run",
-    "JUnit.UserAppHelperTest.testUpdateSuccessfull.executor": "Run",
-    "JUnit.UserServiceTest.executor": "Run",
-    "JUnit.UserServiceTest.testAddUserSuccessfully.executor": "Run",
-    "JUnit.apphelpers in NPTV23Library.executor": "Run",
     "JUnit.java in NPTV23Library.executor": "Run",
-    "Maven.NPTV23Library [clean].executor": "Run",
-    "Maven.NPTV23Library [compile].executor": "Run",
     "Maven.NPTV23Library [install].executor": "Run",
-    "Maven.NPTV23Library [package].executor": "Run",
-    "Maven.NPTV23Library [test].executor": "Run",
-    "Maven.NPTV23Library [validate].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.App.executor": "Run",
+    "RunOnceActivity.git.unshallow": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "refactoring",
-    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/jvm/IdeaProjects/NPTV23Library/src/test/java/ee/ivkhkdev/apphelpers",
-    "last_opened_file_path": "D:/JVM/IdeaProjects_JVM/NPTV23Library",
+    "last_opened_file_path": "/Users/jvm/IdeaProjects/NPTV23Library",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/JVM/IdeaProjects/NPTV23Library/src/main/java/ee/ivkhkdev/Main.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -188,81 +164,75 @@
       <recent name="ee.ivkhkdev.apphelpers" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="ee.ivkhkdev.services" />
       <recent name="ee.ivkhkdev.apphelpers" />
       <recent name="ee.ivkhkdev.interfaces" />
-      <recent name="ee.ivkhkdev.services" />
       <recent name="ee.ivkhkdev" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ee.ivkhkdev.interfaces.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookAppHelperTest">
-    <configuration name="All in NPTV23Library" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted">
+    <configuration name="AuthorServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.services" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.services.AuthorServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.services" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.services.BookServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthorAppHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.AuthorAppHelperTest" />
+      <option name="MAIN_CLASS_NAME" value="BookServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookAppHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.interfaces.*" />
+          <option name="PATTERN" value="ee.ivkhkdev.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.BookAppHelperTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookAppHelperTest.create_shouldCreateBookSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.interfaces.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.BookAppHelperTest" />
-      <option name="METHOD_NAME" value="create_shouldCreateBookSuccessfully" />
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.services" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.services.BookServiceTest" />
+      <option name="METHOD_NAME" value="print_ShouldReturnTrue_WhenBooksArePrinted" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartAppHelperImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in NPTV23Library" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.apphelpers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.apphelpers" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.apphelpers.CartAppHelperImplTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -274,21 +244,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.AuthorServiceTest" />
+      <item itemvalue="JUnit.BookServiceTest" />
+      <item itemvalue="JUnit.BookServiceTest (1)" />
+      <item itemvalue="JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted" />
+      <item itemvalue="JUnit.java in NPTV23Library" />
+      <item itemvalue="Spring Boot.App" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BookAppHelperTest" />
-        <item itemvalue="JUnit.AuthorAppHelperTest" />
-        <item itemvalue="JUnit.All in NPTV23Library" />
-        <item itemvalue="JUnit.CartAppHelperImplTest" />
-        <item itemvalue="JUnit.BookAppHelperTest.create_shouldCreateBookSuccessfully" />
+        <item itemvalue="JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted" />
+        <item itemvalue="JUnit.BookServiceTest (1)" />
+        <item itemvalue="JUnit.BookServiceTest" />
+        <item itemvalue="JUnit.java in NPTV23Library" />
+        <item itemvalue="JUnit.AuthorServiceTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -314,8 +292,39 @@
       <workItem from="1731405844569" duration="11040000" />
       <workItem from="1732819710544" duration="3411000" />
       <workItem from="1732833691875" duration="16991000" />
+      <workItem from="1732868799729" duration="6452000" />
     </task>
     <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15390626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -354,5 +363,95 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NPTV23Library$All_in_NPTV23Library.ic" NAME="All in NPTV23Library Coverage Results" MODIFIED="1731050661618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/ivkhkdev/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>NPTV23Library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.5.12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

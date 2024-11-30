@@ -68,10 +68,19 @@ public class AuthorAppHelper implements AppHelper<Author>{
 
     @Override
     public boolean printList(List<Author> authors) {
-        System.out.println("---------- Список авторов --------");
-        for(int i=0;i<authors.size();i++) {
-            Author author = authors.get(i);
-            System.out.printf("%d. %s %s%n", i+1,author.getAuthorName(),author.getAuthorSurname());
+        try {
+            if(authors.isEmpty()){
+                System.out.println("Список авторов пуст");
+                return false;
+            }
+            System.out.println("---------- Список авторов --------");
+            for(int i=0;i<authors.size();i++) {
+                Author author = authors.get(i);
+                System.out.printf("%d. %s %s%n", i+1,author.getAuthorName(),author.getAuthorSurname());
+            }
+            return true;
+        }catch (Exception e){
+            System.out.println("Error authroAppHelper.printList(authors"+e.getMessage());
         }
         return false;
     }

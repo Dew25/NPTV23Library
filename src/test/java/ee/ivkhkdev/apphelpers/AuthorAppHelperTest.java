@@ -127,7 +127,7 @@ class AuthorAppHelperTest {
         boolean result = authorAppHelper.printList(authors);
 
         // Assert
-        assertFalse(result);
+        assertTrue(result);
         // Verify that it iterates through the list (manual verification of printed output might be required).
     }
 
