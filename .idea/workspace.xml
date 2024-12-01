@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4acfb5f-dda8-4640-9248-4bd057351b32" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/UserAppHelperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/AuthorServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/CardServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/AuthorAppHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AuthorAppHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/apphelpers/AuthorAppHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +62,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2mdqvl8Iugjvdromy8E7XYERua2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -125,9 +122,12 @@
     "JUnit.AuthorServiceTest.executor": "Run",
     "JUnit.AuthorServiceTest.print_ShouldReturnTrue_WhenAuthorsArePrinted.executor": "Run",
     "JUnit.BookServiceTest (1).executor": "Debug",
+    "JUnit.BookServiceTest.edit_ShouldReturnTrue_WhenBooksAreUpdatedAndSaved.executor": "Debug",
     "JUnit.BookServiceTest.executor": "Run",
-    "JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted.executor": "Debug",
+    "JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted.executor": "Run",
+    "JUnit.CardServiceImplTest.executor": "Run",
     "JUnit.UserAppHelperTest.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
     "JUnit.java in NPTV23Library.executor": "Run",
     "Maven.NPTV23Library [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -135,6 +135,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "refactoring",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/jvm/IdeaProjects/NPTV23Library",
     "node.js.detected.package.eslint": "true",
@@ -173,23 +174,8 @@
       <recent name="ee.ivkhkdev.interfaces.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted">
-    <configuration name="AuthorServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NPTV23Library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ee.ivkhkdev.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ee.ivkhkdev.services" />
-      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.services.AuthorServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.java in NPTV23Library">
+    <configuration name="BookServiceTest.edit_ShouldReturnTrue_WhenBooksAreUpdatedAndSaved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <extension name="coverage">
         <pattern>
@@ -199,16 +185,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="ee.ivkhkdev.services" />
       <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.services.BookServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NPTV23Library" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BookServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="edit_ShouldReturnTrue_WhenBooksAreUpdatedAndSaved" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -229,6 +207,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CardServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.services" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.services.CardServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NPTV23Library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ee.ivkhkdev.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ee.ivkhkdev.services" />
+      <option name="MAIN_CLASS_NAME" value="ee.ivkhkdev.services.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in NPTV23Library" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NPTV23Library" />
       <option name="TEST_OBJECT" value="directory" />
@@ -245,28 +253,28 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.AuthorServiceTest" />
-      <item itemvalue="JUnit.BookServiceTest" />
-      <item itemvalue="JUnit.BookServiceTest (1)" />
+      <item itemvalue="JUnit.CardServiceImplTest" />
+      <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="JUnit.BookServiceTest.edit_ShouldReturnTrue_WhenBooksAreUpdatedAndSaved" />
       <item itemvalue="JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted" />
       <item itemvalue="JUnit.java in NPTV23Library" />
       <item itemvalue="Spring Boot.App" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted" />
-        <item itemvalue="JUnit.BookServiceTest (1)" />
-        <item itemvalue="JUnit.BookServiceTest" />
         <item itemvalue="JUnit.java in NPTV23Library" />
-        <item itemvalue="JUnit.AuthorServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.CardServiceImplTest" />
+        <item itemvalue="JUnit.BookServiceTest.edit_ShouldReturnTrue_WhenBooksAreUpdatedAndSaved" />
+        <item itemvalue="JUnit.BookServiceTest.print_ShouldReturnTrue_WhenBooksArePrinted" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
       </set>
     </attachedChunks>
   </component>
@@ -293,6 +301,8 @@
       <workItem from="1732819710544" duration="3411000" />
       <workItem from="1732833691875" duration="16991000" />
       <workItem from="1732868799729" duration="6452000" />
+      <workItem from="1733000806993" duration="2581000" />
+      <workItem from="1733043387147" duration="2883000" />
     </task>
     <servers />
   </component>
@@ -350,8 +360,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ee/ivkhkdev/apphelpers/BookAppHelper.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="8" />
+          <line>168</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ee/ivkhkdev/services/BookServiceTest.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

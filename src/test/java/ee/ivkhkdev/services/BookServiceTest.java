@@ -79,17 +79,20 @@ class BookServiceTest {
         Book book1 = new Book();
         book1.setTitle("Clean Code");
         book1.setAuthors(List.of(new Author("Robert", "Martin")));
+        book1.setPublishedYear(2000);
         books.add(book1);
 
         List<Book> updatedBooks = new ArrayList<>();
         Book updatedBook = new Book();
         updatedBook.setTitle("Clean Architecture");
         updatedBook.setAuthors(List.of(new Author("Robert", "Martin")));
+        updatedBook.setPublishedYear(2001);
         updatedBooks.add(updatedBook);
 
         // Мокаем поведение метода update() для возврата обновленного списка
         when(bookAppHelper.update(books)).thenReturn(updatedBooks);
-
+        when(bookService.list()).thenReturn(books);
+        //when(bookAppHelper.printList(books)).thenReturn(true);
         // Мокаем метод saveAll() для репозитория
         doNothing().when(bookAppRepository).saveAll(updatedBooks, "books");
 
@@ -136,7 +139,7 @@ class BookServiceTest {
 
         // Мокаем метод printList() для возврата true
         when(bookAppHelper.printList(books)).thenReturn(true);
-        whien(bookAppHelper.)
+        when(bookAppRepository.load("books")).thenReturn(books);
         // Вызов метода
         boolean result = bookService.print();
 
